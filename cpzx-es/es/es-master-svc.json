@@ -1,0 +1,27 @@
+{
+  "apiVersion": "v1",
+  "kind": "Service",
+  "metadata": {
+    "name": "elasticsearch-master",
+    "namespace": "cpzx",
+    "labels": {
+      "component": "elasticsearch",
+      "role": "cpzx-es-master"
+    }
+  },
+  "spec": {
+    "type": "NodePort",
+    "selector": {
+      "component": "elasticsearch",
+      "role": "cpzx-es-master"
+    },
+    "ports": [
+      {
+        "name": "http",
+        "port": 9200,
+        "protocol": "TCP",
+        "nodePort": 30127
+      }
+    ]
+  }
+}

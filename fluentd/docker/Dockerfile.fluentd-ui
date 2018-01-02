@@ -1,0 +1,30 @@
+# ubunt 14.04
+# apt-get install fluentd
+FROM ubuntu:14.04
+MAINTAINER dawei.li@company.com 
+
+# Install Kafka
+RUN sudo sed -i 's/archive.ubuntu.com/mirrors.163.com/g' /etc/apt/sources.list
+RUN sudo apt-get update -y
+RUN sudo apt-get install software-properties-common -y
+RUN sudo apt-add-repository ppa:brightbox/ruby-ng
+RUN sudo apt-get update -y && sudo apt-get install -y wget vim gem ruby2.3 ruby2.3-dev xinetd make
+RUN sudo apt-get install -y zlib1g-dev libxml2 libxml2-dev
+RUN sudo apt-get -y install build-essential libssl-dev
+RUN sudo gem install fluentd-ui --no-ri --no-rdoc -V
+RUN sudo gem install fluent-plugin-kafka
+RUN sudo gem sources --remove https://rubygems.org/
+RUN sudo gem sources -a https://ruby.taobao.org/
+RUN sudo gem install fluentd --no-ri --no-rdoc
+
+EXPOSE 9292
+EXPOSE 9880
+EXPOSE 24220
+EXPOSE 24224
+EXPOSE 24230
+
+
+ENTRYPOINT ["fluentd-ui start"]
+
+# docker run example:
+# docker run -ti --restart—rm —net=host -p 9292:9292 -p 24224:24224 -p 9880:9880 -p 24220:24220 -p 24230:24230 -v /etc/fluentd/:/etc/fluentd -v /var/log/fluentd/:/var/log/fluentd fluentd-ui:0.4.2

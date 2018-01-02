@@ -1,0 +1,105 @@
+{
+  "spec": {
+    "template": {
+      "spec": {
+        "volumes": [
+          {
+            "rbd": {
+              "readOnly": false,
+              "fsType": "ext4",
+              "secretRef": {
+                "name": "ceph-secret"
+              },
+              "user": "admin",
+              "image": "esdata2",
+              "pool": "rbd",
+              "monitors": [
+                "172.17.1.11:6789"
+              ]
+            },
+            "name": "es-data2"
+          }
+        ],
+        "serviceAccount": "elasticsearch",
+        "restartPolicy": "Always",
+        "containers": [
+          {
+            "volumeMounts": [
+              {
+                "name": "es-data2",
+                "mountPath": "/data"
+              }
+            ],
+            "securityContext": {
+              "privileged": false,
+              "capabilities": {
+                "add": [
+                  "IPC_LOCK"
+                ]
+              }
+            },
+            "ports": [
+              {
+                "protocol": "TCP",
+                "name": "transport",
+                "containerPort": 9300
+              }
+            ],
+            "name": "es-data1",
+            "image": "registry.docker:5000/company/elasticsearch:2.1.1",
+            "env": [
+              {
+                "value": "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt",
+                "name": "KUBERNETES_CA_CERTIFICATE_FILE"
+              },
+              {
+                "valueFrom": {
+                  "fieldRef": {
+                    "fieldPath": "metadata.namespace"
+                  }
+                },
+                "name": "NAMESPACE"
+              },
+              {
+                "value": "myesdb",
+                "name": "CLUSTER_NAME"
+              },
+              {
+                "value": "false",
+                "name": "NODE_MASTER"
+              },
+              {
+                "value": "false",
+                "name": "HTTP_ENABLE"
+              },
+              {
+                "value": "32g",
+                "name": "ES_HEAP_SIZE"
+              }
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "labels": {
+          "role": "data2",
+          "component": "elasticsearch"
+        }
+      }
+    },
+    "selector": {
+      "role": "data2",
+      "component": "elasticsearch"
+    },
+    "replicas": 1
+  },
+  "metadata": {
+    "name": "es-data2",
+    "labels": {
+      "role": "data2",
+      "component": "elasticsearch"
+    }
+  },
+  "kind": "ReplicationController",
+  "apiVersion": "v1"
+}

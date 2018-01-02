@@ -1,0 +1,49 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: push-ios
+  labels:
+    name: push-ios
+spec:
+  replicas: 2
+  selector:
+    name: push-ios
+  template:
+    metadata:
+      labels:
+        name: push-ios
+    spec:
+      containers:
+      - name: push-ios
+        image: registry.test.com:5000/push-ios:v1
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: "2"
+            memory: "4096Mi"
+        livenessProbe:
+          httpGet:
+            path: /ios-pns/health
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 120
+        volumeMounts:
+        - mountPath: /apps/log
+          name: storage
+        - mountPath: /var/company/pushcert
+          name: cert
+      volumes:
+      - name: storage
+        source:
+          emptyDir: {}
+      - name: cert
+        rbd: 
+          monitors:
+            - "172.21.1.11:6789"
+          pool: rbd
+          image: pushios
+          secretRef:
+            name: ceph-secret
+          fsType: ext4
+          readOnly: false

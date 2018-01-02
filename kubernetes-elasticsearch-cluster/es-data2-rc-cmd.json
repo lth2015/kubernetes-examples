@@ -1,0 +1,108 @@
+{
+	"spec": {
+		"template": {
+			"spec": {
+				"volumes": [
+				{
+					"rbd": {
+						"readOnly": false,
+							"fsType": "ext4",
+							"secretRef": {
+								"name": "ceph-secret"
+							},
+							"user": "admin",
+							"image": "esdata2",
+							"pool": "rbd",
+							"monitors": [
+								"172.17.1.11:6789"
+								]
+					},
+						"name": "es-data2"
+				}
+				],
+					"serviceAccount": "elasticsearch",
+					"restartPolicy": "Always",
+					"containers": [
+					{
+						"volumeMounts": [
+						{
+							"name": "es-data2",
+							"mountPath": "/data"
+						}
+						],
+							"securityContext": {
+								"privileged": false,
+								"capabilities": {
+									"add": [
+										"IPC_LOCK"
+										]
+								}
+							},
+							"args": [
+								"sed -i -- 's/broker.id=0/broker.id=1/g' /home/kafka/config/server.properties &&  IP=`ifconfig eth0 |  grep 'inet addr:' | awk -F ':' '{print $2}' | awk '{print $1}'` && echo $IP &&  sed -i -- \"s/host.name=KAFKA/host.name=$IP/g\" /home/kafka/config/server.properties && sed -i -- 's/advertised.port=KAFKA/advertised.port=9092/g' /home/kafka/config/server.properties && sed -i -- 's/num.network.threads=3/num.network.threads=10/g' /home/kafka/config/server.properties && sed -i -- 's/num.io.threads=8/num.io.threads=20/g' /home/kafka/config/server.properties && sed -i -- 's/zookeeper.connect=localhost:2181/zookeeper.connect=zookeeper-1:2181,zookeeper-2:2181,zookeeper-3:2181,zookeeper-4:2181,zookeeper-5:2181/g' /home//kafka/config/server.properties && /home/kafka/bin/kafka-server-start.sh /home/kafka/config/server.properties "
+								],
+							"command": [
+								"/bin/sh",
+							"-c"
+								],
+							"ports": [
+							{
+								"protocol": "TCP",
+								"name": "transport",
+								"containerPort": 9300
+							}
+						],
+							"name": "es-data1",
+							"image": "registry.docker:5000/company/elasticsearch:2.1.1",
+							"env": [
+							{
+								"value": "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt",
+								"name": "KUBERNETES_CA_CERTIFICATE_FILE"
+							},
+							{
+								"valueFrom": {
+									"fieldRef": {
+										"fieldPath": "metadata.namespace"
+									}
+								},
+								"name": "NAMESPACE"
+							},
+							{
+								"value": "myesdb",
+								"name": "CLUSTER_NAME"
+							},
+							{
+								"value": "false",
+								"name": "NODE_MASTER"
+							},
+							{
+								"value": "false",
+								"name": "HTTP_ENABLE"
+							}
+						]
+					}
+				]
+			},
+				"metadata": {
+					"labels": {
+						"role": "data2",
+						"component": "elasticsearch"
+					}
+				}
+		},
+			"selector": {
+				"role": "data2",
+				"component": "elasticsearch"
+			},
+			"replicas": 1
+	},
+		"metadata": {
+			"name": "es-data2",
+			"labels": {
+				"role": "data2",
+				"component": "elasticsearch"
+			}
+		},
+		"kind": "ReplicationController",
+		"apiVersion": "v1"
+}

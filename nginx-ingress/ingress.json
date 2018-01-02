@@ -1,0 +1,62 @@
+{
+  "status": {
+    "loadBalancer": {
+      "ingress": [
+        {
+          "hostname": "",
+          "ip": "204.11.99.12"
+        }
+      ]
+    }
+  },
+  "spec": {
+    "rules": [
+      {
+        "http": {
+          "paths": [
+            {
+              "backend": {
+                "servicePort": 80,
+                "serviceName": "echoheaders-x"
+              },
+              "path": "/foo"
+            }
+          ]
+        },
+        "host": "caas.one"
+      },
+      {
+        "http": {
+          "paths": [
+            {
+              "backend": {
+                "servicePort": 80,
+                "serviceName": "echoheaders-y"
+              },
+              "path": "/ear"
+            },
+            {
+              "backend": {
+                "servicePort": 80,
+                "serviceName": "echoheaders-x"
+              },
+              "path": "/foo"
+            }
+          ]
+        },
+        "host": "www.company.io"
+      }
+    ]
+  },
+  "metadata": {
+    "creationTimestamp": "2016-04-05T04:19:04Z",
+    "generation": 2,
+    "resourceVersion": "128234",
+    "uid": "882543f6-fae5-11e5-8f17-fa163e788d93",
+    "selfLink": "/apis/extensions/v1beta1/namespaces/default/ingresses/echomap",
+    "namespace": "default",
+    "name": "echomap"
+  },
+  "apiVersion": "extensions/v1beta1",
+  "kind": "Ingress"
+}

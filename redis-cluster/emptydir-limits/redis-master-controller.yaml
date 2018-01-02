@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: redis-master-memory
+  labels:
+    name: redis-master-memory
+spec:
+  replicas: 1
+  selector:
+    name: redis-master-memory
+  template:
+    metadata:
+      labels:
+        name: redis-master-memory
+    spec:
+      containers:
+      - name: master-memory
+        image: registry.docker:5000/redis
+        ports:
+        - containerPort: 6379
+        resources:
+          limits:
+            cpu: "20"
+            memory: "40960M"

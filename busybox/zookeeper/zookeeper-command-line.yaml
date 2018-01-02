@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: zookcli
+  namespace: default
+spec:
+  containers:
+  - image: registry.docker.company.com:5000/company/zookcli
+    command:
+      - sleep
+      - "36000"
+    imagePullPolicy: IfNotPresent
+    name: zookcli
+  restartPolicy: Always

@@ -1,0 +1,19 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "memcached",
+        "labels": {
+           "name": "memcached"
+        }
+    },
+    "spec": {
+        "ports": [
+            {
+                "protocol": "TCP",
+                "port": 11211,
+                "targetPort": 11211 
+            }
+        ]
+    }
+}

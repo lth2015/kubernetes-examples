@@ -1,0 +1,112 @@
+kind: "List"
+apiVersion: "v1"
+id: "kafka"
+items: 
+  - kind: "Pod"
+    apiVersion: "v1"
+    metadata: 
+      name: "kafka-1"
+      labels: 
+        name: "kafka"
+        server-id: "1"
+    spec: 
+      containers: 
+        - name: "kafka"
+          image: "registry.docker.company.com:5000/company/kafka"
+          #env: 
+          #  - name: "BROKERID"
+          #    value: "1"
+          ports: 
+            - containerPort: 9092
+          command: ['/bin/sh', '-c']
+          args: ['sed -i -- ''s/broker.id=0/broker.id=1/g'' /home/kafka/kafka/config/server.properties && sed -i -- ''s/zookeeper.connect=localhost:2181/zookeeper.connect=zookeeper:2181/g'' /home/kafka/kafka/config/server.properties && /home/kafka/kafka/bin/kafka-server-start.sh /home/kafka/kafka/config/server.properties ']
+  - kind: "Pod"
+    apiVersion: "v1"
+    metadata: 
+      name: "kafka-2"
+      labels: 
+        name: "kafka"
+        server-id: "1"
+    spec: 
+      containers: 
+        - name: "kafka"
+          image: "registry.docker.company.com:5000/company/kafka"
+          #env: 
+          #  - name: "BROKERID"
+          #    value: "1"
+          ports: 
+            - containerPort: 9092
+          command: ['/bin/sh', '-c']
+          args: ['sed -i -- ''s/broker.id=0/broker.id=2/g'' /home/kafka/kafka/config/server.properties && sed -i -- ''s/zookeeper.connect=localhost:2181/zookeeper.connect=zookeeper:2181/g'' /home/kafka/kafka/config/server.properties && /home/kafka/kafka/bin/kafka-server-start.sh /home/kafka/kafka/config/server.properties ']
+  - kind: "Pod"
+    apiVersion: "v1"
+    metadata: 
+      name: "kafka-3"
+      labels: 
+        name: "kafka"
+        server-id: "1"
+    spec: 
+      containers: 
+        - name: "kafka"
+          image: "registry.docker.company.com:5000/company/kafka"
+          #env: 
+          #  - name: "BROKERID"
+          #    value: "1"
+          ports: 
+            - containerPort: 9092
+          command: ['/bin/sh', '-c']
+          args: ['sed -i -- ''s/broker.id=0/broker.id=3/g'' /home/kafka/kafka/config/server.properties && sed -i -- ''s/zookeeper.connect=localhost:2181/zookeeper.connect=zookeeper:2181/g'' /home/kafka/kafka/config/server.properties && /home/kafka/kafka/bin/kafka-server-start.sh /home/kafka/kafka/config/server.properties ']
+  - kind: "Pod"
+    apiVersion: "v1"
+    metadata: 
+      name: "kafka-4"
+      labels: 
+        name: "kafka"
+        server-id: "1"
+    spec: 
+      containers: 
+        - name: "kafka"
+          image: "registry.docker.company.com:5000/company/kafka"
+          #env: 
+          #  - name: "BROKERID"
+          #    value: "1"
+          ports: 
+            - containerPort: 9092
+          command: ['/bin/sh', '-c']
+          args: ['sed -i -- ''s/broker.id=0/broker.id=4/g'' /home/kafka/kafka/config/server.properties && sed -i -- ''s/zookeeper.connect=localhost:2181/zookeeper.connect=zookeeper:2181/g'' /home/kafka/kafka/config/server.properties && /home/kafka/kafka/bin/kafka-server-start.sh /home/kafka/kafka/config/server.properties ']
+  - kind: "Pod"
+    apiVersion: "v1"
+    metadata: 
+      name: "kafka-5"
+      labels: 
+        name: "kafka"
+        server-id: "1"
+    spec: 
+      containers: 
+        - name: "kafka"
+          image: "registry.docker.company.com:5000/company/kafka"
+          #env: 
+          #  - name: "BROKERID"
+          #    value: "1"
+          ports: 
+            - containerPort: 9092
+          command: ['/bin/sh', '-c']
+          args: ['sed -i -- ''s/broker.id=0/broker.id=5/g'' /home/kafka/kafka/config/server.properties && sed -i -- ''s/zookeeper.connect=localhost:2181/zookeeper.connect=zookeeper:2181/g'' /home/kafka/kafka/config/server.properties && /home/kafka/kafka/bin/kafka-server-start.sh /home/kafka/kafka/config/server.properties ']
+  - kind: "Pod"
+    apiVersion: "v1"
+    metadata: 
+      name: "kafka-6"
+      labels: 
+        name: "kafka"
+        server-id: "1"
+    spec: 
+      containers: 
+        - name: "kafka"
+          image: "registry.docker.company.com:5000/company/kafka"
+          #env: 
+          #  - name: "BROKERID"
+          #    value: "1"
+          ports: 
+            - containerPort: 9092
+          command: ['/bin/sh', '-c']
+          args: ['sed -i -- ''s/broker.id=0/broker.id=6/g'' /home/kafka/kafka/config/server.properties && sed -i -- ''s/zookeeper.connect=localhost:2181/zookeeper.connect=zookeeper:2181/g'' /home/kafka/kafka/config/server.properties && /home/kafka/kafka/bin/kafka-server-start.sh /home/kafka/kafka/config/server.properties ']

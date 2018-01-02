@@ -1,0 +1,17 @@
+{
+    "kind": "Endpoints",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "mongo-replica"
+    },
+    "subsets": [
+        {
+            "addresses": [
+                { "IP": "172.21.1.11" }
+            ],
+            "ports": [
+                { "port": 27017 }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: push-android
+  labels:
+    name: push-android
+spec:
+  replicas: 2
+  selector:
+    name: push-android
+  template:
+    metadata:
+      labels:
+        name: push-android
+    spec:
+      containers:
+      - name: push-android
+        image: registry.docker:5000/push-android:v1
+        ports:
+        - containerPort: 8080
+        - containerPort: 8000
+        resources:
+          limits:
+            cpu: "2"
+            memory: "4096Mi"
+        livenessProbe:
+          httpGet:
+            path: /android-pns/healthz
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 30
+        volumeMounts:
+        - mountPath: /apps/log
+          name: storage
+      volumes:
+      - name: storage
+        source:
+          emptyDir: {}

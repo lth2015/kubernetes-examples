@@ -1,0 +1,7 @@
+#!/bin/bash
+
+while((1))
+do
+	echo "{\"log\":\"2015-11-11 10:17:24 +0000 [info]: shutting down fluentd\",\"stream\":\"stdout\",\"time\":\"2015-11-11T10:17:24.895173087Z Hello world~~~~~~~~~~\"}"
+	sleep 0.1
+done

@@ -1,0 +1,48 @@
+events {
+  worker_connections 1024;
+}
+
+http {
+  # http://nginx.org/en/docs/http/ngx_http_core_module.html
+  types_hash_max_size 2048;
+  server_names_hash_max_size 512;
+  server_names_hash_bucket_size 64;
+
+{{ $ingress := .Ingress.Items }}
+{{ $secrets := .Secrets.Items }}
+
+  server {
+    listen 80 default_server;
+    server_name  _;
+    location / {
+        proxy_pass http://www-default-backend:8080;
+    }
+  }
+
+{{range $ing := $ingress}}
+{{range $rule := $ing.Spec.Rules}}
+  server {
+    listen 80;
+    server_name {{$rule.Host}};
+    {{ range $path := $rule.HTTP.Paths }}
+    location {{$path.Path}} {
+      proxy_set_header Host $host;
+      proxy_pass http://{{$path.Backend.ServiceName}}.{{$ing.Namespace}}.svc.cluster.local:{{$path.Backend.ServicePort}};
+    }
+    {{end}}
+
+    {{range $ssl := $secrets}}{{if hasprefix $rule.Host $ssl.Name }}
+    listen 443 ssl;
+    ssl_certificate certs/{{$rule.Host}}/pem; 
+    ssl_certificate_key certs/{{$rule.Host}}/pem;
+    ssl_dhparam dhparam/pem;
+    if ($scheme = http) {
+      return 301 https://$server_name$request_uri;
+    }
+    {{end}}{{end}}
+  }
+{{end}}
+{{end}}
+}
+
+

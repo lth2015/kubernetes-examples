@@ -1,0 +1,29 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: fluentd
+  namespace: default
+spec:
+  template:
+    metadata:
+      labels:
+        app: fluentd
+    spec:
+      dnsPolicy: "ClusterFirst"
+      restartPolicy: "Always"
+      containers:
+      - name: fluentd
+        image: fluentd:v0.1.0
+        imagePullPolicy: "Always"
+        env:
+        - name: ES_HOST
+          value: http://elasticsearch
+        - name: ES_PORT
+          value: "9200"
+        volumeMounts:
+          - mountPath: /var/lib/docker/containers
+            name: docker-container
+      volumes:
+        - hostPath:
+            path: /var/lib/docker/containers
+          name: docker-container

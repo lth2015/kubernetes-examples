@@ -1,0 +1,20 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "kafka",
+        "labels": {
+           "name": "kafka"
+        }
+    },
+    "spec": {
+        "ports": [
+            {
+	    	"name": "9092",
+                "protocol": "TCP",
+                "port": 9092,
+                "targetPort": 9092
+            }
+        ]
+    }
+}

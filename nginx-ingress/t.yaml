@@ -1,0 +1,95 @@
+# 3 Services for the 3 endpoints of the Ingress
+apiVersion: v1
+kind: Service
+metadata:
+  name: echoheaders-x
+  labels:
+    app: echoheaders
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    nodePort: 30301
+    targetPort: 8080
+    protocol: TCP
+    name: http
+  selector:
+    app: echoheaders
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: echoheaders-default
+  labels:
+    app: echoheaders
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    nodePort: 30302
+    targetPort: 8080
+    protocol: TCP
+    name: http
+  selector:
+    app: echoheaders
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: echoheaders-y
+  labels:
+    app: echoheaders
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    nodePort: 30284
+    targetPort: 8080
+    protocol: TCP
+    name: http
+  selector:
+    app: echoheaders
+---
+# A single RC matching all Services
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: echoheaders
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: echoheaders
+    spec:
+      containers:
+      - name: echoheaders
+        image: gcr.io/google_containers/echoserver:1.0
+        ports:
+        - containerPort: 8080
+---
+# An Ingress with 2 hosts and 3 endpoints
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: echomap
+spec:
+  rules:
+  - host: caas.one
+    http:
+      paths:
+      - path: /foo
+        backend:
+          serviceName: echoheaders-x
+          servicePort: 80
+  - host: www.company.io
+    http:
+      paths:
+      - path: /bar
+        backend:
+          serviceName: echoheaders-y
+          servicePort: 80
+      - path: /foo
+        backend:
+          serviceName: echoheaders-x
+          servicePort: 80

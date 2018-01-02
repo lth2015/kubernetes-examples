@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: company-img
+  labels:
+    name: company-img
+spec:
+  replicas: 2
+  selector:
+    name: company-img
+  template:
+    metadata:
+      labels:
+        name: company-img
+    spec:
+      containers:
+      - name: company-img 
+        image: registry.docker.company.com:5000/company/img-server
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: nfs-company-img
+          mountPath: "/usr/local/company-img/public/"
+      volumes:
+        - name: nfs-company-img
+          server: 172.23.86.22
+          path: "/tmp"

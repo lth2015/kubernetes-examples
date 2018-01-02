@@ -1,0 +1,111 @@
+{
+  "spec": {
+    "template": {
+      "spec": {
+        "volumes": [
+          {
+            "rbd": {
+              "readOnly": false,
+              "fsType": "ext4",
+              "secretRef": {
+                "name": "ceph-secret"
+              },
+              "user": "admin",
+              "image": "esmaster3",
+              "pool": "rbd",
+              "monitors": [
+                "node1:6789",
+                "node2:6789",
+                "node3:6789"
+              ]
+            },
+            "name": "es-master3"
+          }
+        ],
+        "serviceAccount": "elasticsearch",
+        "restartPolicy": "Always",
+        "containers": [
+          {
+            "volumeMounts": [
+              {
+                "name": "es-master3",
+                "mountPath": "/data"
+              }
+            ],
+            "securityContext": {
+              "privileged": false,
+              "capabilities": {
+                "add": [
+                  "IPC_LOCK"
+                ]
+              }
+            },
+            "ports": [
+              {
+                "protocol": "TCP",
+                "name": "transport",
+                "containerPort": 9300
+              }
+            ],
+            "name": "es-master3",
+            "image": "registry.docker:5000/company/elasticsearch:2.1.1",
+            "imagePullPolicy": "IfNotPresent",
+            "env": [
+              {
+                "value": "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt",
+                "name": "KUBERNETES_CA_CERTIFICATE_FILE"
+              },
+              {
+                "valueFrom": {
+                  "fieldRef": {
+                    "fieldPath": "metadata.namespace"
+                  }
+                },
+                "name": "NAMESPACE"
+              },
+              {
+                "value": "myesdb",
+                "name": "CLUSTER_NAME"
+              },
+              {
+                "value": "true",
+                "name": "NODE_MASTER"
+              },
+              {
+                "value": "false",
+                "name": "NODE_DATA"
+              },
+              {
+                "value": "false",
+                "name": "HTTP_ENABLE"
+              }
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "labels": {
+          "role": "master",
+	  "master3": "true",
+          "component": "elasticsearch"
+        }
+      }
+    },
+    "selector": {
+      "role": "master",
+      "master3": "true",
+      "component": "elasticsearch"
+    },
+    "replicas": 1
+  },
+  "metadata": {
+    "name": "es-master3",
+    "labels": {
+      "role": "master",
+      "master3": "true",
+      "component": "elasticsearch"
+    }
+  },
+  "kind": "ReplicationController",
+  "apiVersion": "v1"
+}

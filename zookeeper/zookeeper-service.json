@@ -1,0 +1,32 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "zookeeper",
+        "labels": {
+           "name": "zookeeper"
+        }
+    },
+    "spec": {
+        "ports": [
+            {
+	    	"name": "2181",
+                "protocol": "TCP",
+                "port": 2181,
+                "targetPort": 2181
+            },
+            {
+	    	"name": "2888",
+                "protocol": "TCP",
+                "port": 2888,
+                "targetPort": 2888
+            },
+            {
+	    	"name": "3888",
+                "protocol": "TCP",
+                "port": 3888,
+                "targetPort": 3888
+            }
+        ]
+    }
+}

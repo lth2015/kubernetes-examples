@@ -1,0 +1,17 @@
+{
+    "kind": "Endpoints",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "company-image"
+    },
+    "subsets": [
+        {
+            "addresses": [
+                { "IP": "172.21.1.11" }
+            ],
+            "ports": [
+                { "port": 8088 }
+            ]
+        }
+    ]
+}

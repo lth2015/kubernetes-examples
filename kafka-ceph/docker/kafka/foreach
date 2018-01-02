@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for i in {1..14}
+do 
+	echo "Node$i 10.149.149.$i ~~~~~~~~~~~~~~~~~~~~~~~~~"
+	#ssh root@node$i "docker pull registry.docker:5000/hello-world"
+	ssh root@node$i "docker rmi -f registry.docker:5000/company/kafka:2.11-0.9.0"
+done

@@ -1,0 +1,24 @@
+{
+  "apiVersion": "v1",
+  "kind": "Service",
+  "metadata": {
+    "name": "redis-master-rbd",
+    "labels": {
+      "name": "redis-master"
+    }
+  },
+  "spec": {
+    "type": "NodePort",
+    "selector": {
+      "name": "redis-master"
+    },
+    "ports": [
+      {
+        "name": "http",
+        "port": 6379,
+        "protocol": "TCP",
+        "nodePort": 32759
+      }
+    ]
+  }
+}

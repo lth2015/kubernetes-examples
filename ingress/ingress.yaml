@@ -1,0 +1,21 @@
+# An Ingress with 2 hosts and 3 endpoints
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: echomap
+spec:
+  backend:
+    serviceName:
+    servicePort: 80
+  rules:
+  - host: caas.one
+    http:
+      paths:
+      - path: /foo
+        backend:
+          serviceName: echoheaders-x
+          servicePort: 80
+      - path: /bar
+        backend:
+          serviceName: echoheaders-y
+          servicePort: 80

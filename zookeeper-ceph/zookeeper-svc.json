@@ -1,0 +1,36 @@
+{
+  "apiVersion": "v1",
+  "kind": "Service",
+  "metadata": {
+    "name": "zookeeper",
+    "labels": {
+      "role": "zookeeper"
+    }
+  },
+  "spec": {
+    "type": "NodePort",
+    "selector": {
+      "role": "zookeeper"
+    },
+    "ports": [
+      {
+        "name": "client",
+        "port": 2181,
+        "protocol": "TCP",
+        "nodePort": 32751
+      },
+      {
+        "name": "followers",
+        "port": 2888,
+        "protocol": "TCP",
+        "nodePort": 32752
+      },
+      {
+        "name": "election",
+        "port": 3888,
+        "protocol": "TCP",
+        "nodePort": 32753
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+FROM ubuntu:14.04
+MAINTAINER dawei.li@company.com
+# Preparing software
+RUN apt-get update -yqq
+RUN apt-get install -y git telnet build-essential curl libreadline-dev libncurses5-dev libpcre3-dev libssl-dev vim  perl wget supervisor gcc g++ nginx

@@ -1,0 +1,28 @@
+#
+# This pod imports nfs-server.default.kube.local:/ into /usr/share/nginx/html
+#
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nfs-mongo
+  labels:
+    role: nfs-mongo
+spec:
+  containers:
+    - name: nfs-mongo
+      image: company/mongodb:3.0
+      ports:
+        - name: nfs-mongo
+          containerPort: 27017
+      volumeMounts:
+          # name must match the volume name below
+          - name: mongo-master-nfs
+            mountPath: "/data/db"
+  volumes:
+    - name: mongo-master-nfs
+      nfs:
+        # FIXME: use the right hostname
+        # server: nfs-server.default.cluster.local
+        server: 172.17.0.1
+        path: "/tmp"

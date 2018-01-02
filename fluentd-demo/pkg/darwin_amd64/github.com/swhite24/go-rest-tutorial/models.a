@@ -1,0 +1,118 @@
+!<arch>
+__.PKGDEF       0           0     0     644     10508     `
+go object darwin amd64 go1.5.3 X:none
+build id "94b1ca7ce1ec890c462911774de4f43354766d12"
+
+$$
+package models
+	import runtime "runtime"
+	import bson "gopkg.in/mgo.v2/bson"
+	import time "time" // indirect
+	type @"time".zone struct { @"time".name string; @"time".offset int; @"time".isDST bool }
+	type @"time".zoneTrans struct { @"time".when int64; @"time".index uint8; @"time".isstd bool; @"time".isutc bool }
+	type @"time".Location struct { @"time".name string; @"time".zone []@"time".zone; @"time".tx []@"time".zoneTrans; @"time".cacheStart int64; @"time".cacheEnd int64; @"time".cacheZone *@"time".zone }
+	func (@"time".lÂ·2 *@"time".Location "esc:0x22") String () (? string)
+	func (@"time".lÂ·2 *@"time".Location "esc:0x1") @"time".firstZoneUsed () (? bool)
+	func (@"time".lÂ·2 *@"time".Location "esc:0x12") @"time".get () (? *@"time".Location)
+	func (@"time".lÂ·6 *@"time".Location "esc:0x32") @"time".lookup (@"time".secÂ·7 int64) (@"time".nameÂ·1 string, @"time".offsetÂ·2 int, @"time".isDSTÂ·3 bool, @"time".startÂ·4 int64, @"time".endÂ·5 int64)
+	func (@"time".lÂ·2 *@"time".Location "esc:0x1") @"time".lookupFirstZone () (? int)
+	func (@"time".lÂ·4 *@"time".Location "esc:0x1") @"time".lookupName (@"time".nameÂ·5 string "esc:0x1", @"time".unixÂ·6 int64) (@"time".offsetÂ·1 int, @"time".isDSTÂ·2 bool, @"time".okÂ·3 bool)
+	type @"time".Duration int64
+	func (@"time".dÂ·2 @"time".Duration) Hours () (? float64) { var @"time".hourÂ·3 @"time".Duration; ; @"time".hourÂ·3 = @"time".dÂ·2 / @"time".Duration(0x34630b8a000); var @"time".nsecÂ·4 @"time".Duration; ; @"time".nsecÂ·4 = @"time".dÂ·2 % @"time".Duration(0x34630b8a000); return float64(@"time".hourÂ·3) + float64(@"time".nsecÂ·4) * 8190022623310637111963488201822504381538623676021880892417778544696899264837610290203272971060556344039023584360473938041055625214280336402169897364226048p-553 }
+	func (@"time".dÂ·2 @"time".Duration) Minutes () (? float64) { var @"time".minÂ·3 @"time".Duration; ; @"time".minÂ·3 = @"time".dÂ·2 / @"time".Duration(0xdf8475800); var @"time".nsecÂ·4 @"time".Duration; ; @"time".nsecÂ·4 = @"time".dÂ·2 % @"time".Duration(0xdf8475800); return float64(@"time".minÂ·3) + float64(@"time".nsecÂ·4) * 7678146209353722106395056769533233877065564876941352542109479049699919628723768656821910653339403201031675627614471533358284117434246264392176261853609984p-547 }
+	func (@"time".dÂ·2 @"time".Duration) Nanoseconds () (? int64) { return int64(@"time".dÂ·2) }
+	func (@"time".dÂ·2 @"time".Duration) Seconds () (? float64) { var @"time".secÂ·3 @"time".Duration; ; @"time".secÂ·3 = @"time".dÂ·2 / @"time".Duration(0x3b9aca00); var @"time".nsecÂ·4 @"time".Duration; ; @"time".nsecÂ·4 = @"time".dÂ·2 % @"time".Duration(0x3b9aca00); return float64(@"time".secÂ·3) + float64(@"time".nsecÂ·4) * 7198262071269114660816079141112770740375861891461678802759824945047098083990024106014198994535558872472104883612039846078596891298747423852523262413111296p-541 }
+	func (@"time".dÂ·2 @"time".Duration) String () (? string)
+	type @"time".Month int
+	func (@"time".mÂ·2 @"time".Month) String () (? string) { return @"time".months[@"time".mÂ·2 - @"time".Month(0x1)] }
+	type @"time".Weekday int
+	func (@"time".dÂ·2 @"time".Weekday) String () (? string) { return @"time".days[@"time".dÂ·2] }
+	type @"time".Time struct { @"time".sec int64; @"time".nsec int32; @"time".loc *@"time".Location }
+	func (@"time".tÂ·2 @"time".Time "esc:0x12") Add (@"time".dÂ·3 @"time".Duration) (? @"time".Time) { @"time".tÂ·2.@"time".sec += int64(@"time".dÂ·3 / @"time".Duration(0x3b9aca00)); var @"time".nsecÂ·4 int32; ; @"time".nsecÂ·4 = int32(@"time".tÂ·2.@"time".nsec) + int32(@"time".dÂ·3 % @"time".Duration(0x3b9aca00)); if @"time".nsecÂ·4 >= 0x3b9aca00 { @"time".tÂ·2.@"time".sec++; @"time".nsecÂ·4 -= 0x3b9aca00 } else { if @"time".nsecÂ·4 < 0x0 { @"time".tÂ·2.@"time".sec--; @"time".nsecÂ·4 += 0x3b9aca00 } }; @"time".tÂ·2.@"time".nsec = @"time".nsecÂ·4; return @"time".tÂ·2 }
+	func (@"time".tÂ·2 @"time".Time "esc:0x12") AddDate (@"time".yearsÂ·3 int, @"time".monthsÂ·4 int, @"time".daysÂ·5 int) (? @"time".Time)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") After (@"time".uÂ·3 @"time".Time "esc:0x1") (? bool) { return @"time".tÂ·2.@"time".sec > @"time".uÂ·3.@"time".sec || @"time".tÂ·2.@"time".sec == @"time".uÂ·3.@"time".sec && @"time".tÂ·2.@"time".nsec > @"time".uÂ·3.@"time".nsec }
+	func (@"time".tÂ·2 @"time".Time "esc:0x9") AppendFormat (@"time".bÂ·3 []byte "esc:0x1a", @"time".layoutÂ·4 string "esc:0x9") (? []byte)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") Before (@"time".uÂ·3 @"time".Time "esc:0x1") (? bool) { return @"time".tÂ·2.@"time".sec < @"time".uÂ·3.@"time".sec || @"time".tÂ·2.@"time".sec == @"time".uÂ·3.@"time".sec && @"time".tÂ·2.@"time".nsec < @"time".uÂ·3.@"time".nsec }
+	func (@"time".tÂ·4 @"time".Time "esc:0x1") Clock () (@"time".hourÂ·1 int, @"time".minÂ·2 int, @"time".secÂ·3 int)
+	func (@"time".tÂ·4 @"time".Time "esc:0x1") Date () (@"time".yearÂ·1 int, @"time".monthÂ·2 @"time".Month, @"time".dayÂ·3 int)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") Day () (? int)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") Equal (@"time".uÂ·3 @"time".Time "esc:0x1") (? bool) { return @"time".tÂ·2.@"time".sec == @"time".uÂ·3.@"time".sec && @"time".tÂ·2.@"time".nsec == @"time".uÂ·3.@"time".nsec }
+	func (@"time".tÂ·2 @"time".Time "esc:0x9") Format (@"time".layoutÂ·3 string "esc:0x9") (? string)
+	func (@"time".tÂ·2 *@"time".Time "esc:0x1") GobDecode (@"time".dataÂ·3 []byte "esc:0x1") (? error)
+	func (@"time".tÂ·3 @"time".Time "esc:0x1") GobEncode () (? []byte, ? error)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") Hour () (? int)
+	func (@"time".tÂ·3 @"time".Time "esc:0x1") ISOWeek () (@"time".yearÂ·1 int, @"time".weekÂ·2 int)
+	func (@"time".tÂ·2 @"time".Time "esc:0x12") In (@"time".locÂ·3 *@"time".Location "esc:0x12") (? @"time".Time)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") IsZero () (? bool) { return @"time".tÂ·2.@"time".sec == 0x0 && @"time".tÂ·2.@"time".nsec == 0x0 }
+	func (@"time".tÂ·2 @"time".Time "esc:0x12") Local () (? @"time".Time) { @"time".tÂ·2.@"time".loc = @"time".Local; return @"time".tÂ·2 }
+	func (@"time".tÂ·2 @"time".Time "esc:0x12") Location () (? *@"time".Location) { var @"time".lÂ·3 *@"time".Location; ; @"time".lÂ·3 = @"time".tÂ·2.@"time".loc; if @"time".lÂ·3 == nil { @"time".lÂ·3 = @"time".UTC }; return @"time".lÂ·3 }
+	func (@"time".tÂ·3 @"time".Time "esc:0x1") MarshalBinary () (? []byte, ? error)
+	func (@"time".tÂ·3 @"time".Time "esc:0x9") MarshalJSON () (? []byte, ? error)
+	func (@"time".tÂ·3 @"time".Time "esc:0x9") MarshalText () (? []byte, ? error)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") Minute () (? int)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") Month () (? @"time".Month)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") Nanosecond () (? int) { return int(@"time".tÂ·2.@"time".nsec) }
+	func (@"time".tÂ·2 @"time".Time "esc:0x12") Round (@"time".dÂ·3 @"time".Duration) (? @"time".Time)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") Second () (? int)
+	func (@"time".tÂ·2 @"time".Time "esc:0x9") String () (? string)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") Sub (@"time".uÂ·3 @"time".Time "esc:0x1") (? @"time".Duration)
+	func (@"time".tÂ·2 @"time".Time "esc:0x12") Truncate (@"time".dÂ·3 @"time".Duration) (? @"time".Time)
+	func (@"time".tÂ·2 @"time".Time "esc:0x12") UTC () (? @"time".Time) { @"time".tÂ·2.@"time".loc = @"time".UTC; return @"time".tÂ·2 }
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") Unix () (? int64) { return @"time".tÂ·2.@"time".sec + -0xe7791f700 }
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") UnixNano () (? int64) { return (@"time".tÂ·2.@"time".sec + -0xe7791f700) * 0x3b9aca00 + int64(@"time".tÂ·2.@"time".nsec) }
+	func (@"time".tÂ·2 *@"time".Time "esc:0x1") UnmarshalBinary (@"time".dataÂ·3 []byte "esc:0x1") (? error)
+	func (@"time".tÂ·2 *@"time".Time "esc:0x1") UnmarshalJSON (@"time".dataÂ·3 []byte "esc:0x1") (@"time".errÂ·1 error)
+	func (@"time".tÂ·2 *@"time".Time "esc:0x1") UnmarshalText (@"time".dataÂ·3 []byte "esc:0x1") (@"time".errÂ·1 error)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") Weekday () (? @"time".Weekday)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") Year () (? int)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") YearDay () (? int)
+	func (@"time".tÂ·3 @"time".Time "esc:0x32") Zone () (@"time".nameÂ·1 string, @"time".offsetÂ·2 int)
+	func (@"time".tÂ·2 @"time".Time "esc:0x1") @"time".abs () (? uint64)
+	func (@"time".tÂ·5 @"time".Time "esc:0x1") @"time".date (@"time".fullÂ·6 bool) (@"time".yearÂ·1 int, @"time".monthÂ·2 @"time".Month, @"time".dayÂ·3 int, @"time".ydayÂ·4 int)
+	func (@"time".tÂ·4 @"time".Time "esc:0x32") @"time".locabs () (@"time".nameÂ·1 string, @"time".offsetÂ·2 int, @"time".absÂ·3 uint64)
+	type @"gopkg.in/mgo.v2/bson".ObjectId string
+	func (@"gopkg.in/mgo.v2/bson".idÂ·2 @"gopkg.in/mgo.v2/bson".ObjectId) Counter () (? int32)
+	func (@"gopkg.in/mgo.v2/bson".idÂ·2 @"gopkg.in/mgo.v2/bson".ObjectId "esc:0x1") Hex () (? string)
+	func (@"gopkg.in/mgo.v2/bson".idÂ·2 @"gopkg.in/mgo.v2/bson".ObjectId) Machine () (? []byte)
+	func (@"gopkg.in/mgo.v2/bson".idÂ·3 @"gopkg.in/mgo.v2/bson".ObjectId) MarshalJSON () (? []byte, ? error)
+	func (@"gopkg.in/mgo.v2/bson".idÂ·3 @"gopkg.in/mgo.v2/bson".ObjectId) MarshalText () (? []byte, ? error)
+	func (@"gopkg.in/mgo.v2/bson".idÂ·2 @"gopkg.in/mgo.v2/bson".ObjectId) Pid () (? uint16)
+	func (@"gopkg.in/mgo.v2/bson".idÂ·2 @"gopkg.in/mgo.v2/bson".ObjectId) String () (? string)
+	func (@"gopkg.in/mgo.v2/bson".idÂ·2 @"gopkg.in/mgo.v2/bson".ObjectId) Time () (? @"time".Time)
+	func (@"gopkg.in/mgo.v2/bson".idÂ·2 *@"gopkg.in/mgo.v2/bson".ObjectId "esc:0x1") UnmarshalJSON (@"gopkg.in/mgo.v2/bson".dataÂ·3 []byte "esc:0x1") (? error)
+	func (@"gopkg.in/mgo.v2/bson".idÂ·2 *@"gopkg.in/mgo.v2/bson".ObjectId "esc:0x1") UnmarshalText (@"gopkg.in/mgo.v2/bson".dataÂ·3 []byte) (? error)
+	func (@"gopkg.in/mgo.v2/bson".idÂ·2 @"gopkg.in/mgo.v2/bson".ObjectId "esc:0x1") Valid () (? bool) { return len(@"gopkg.in/mgo.v2/bson".idÂ·2) == 0xc }
+	func (@"gopkg.in/mgo.v2/bson".idÂ·2 @"gopkg.in/mgo.v2/bson".ObjectId) @"gopkg.in/mgo.v2/bson".byteSlice (@"gopkg.in/mgo.v2/bson".startÂ·3 int, @"gopkg.in/mgo.v2/bson".endÂ·4 int) (? []byte)
+	type @"".User struct { Id @"gopkg.in/mgo.v2/bson".ObjectId "json:\"id\" bson:\"_id\""; Name string "json:\"name\" bson:\"name\""; Gender string "json:\"gender\" bson:\"gender\""; Age int "json:\"age\" bson:\"age\"" }
+	func @"".init ()
+	var @"time".months [12]string
+	var @"time".days [7]string
+	var @"time".Local *@"time".Location
+	var @"time".UTC *@"time".Location
+
+$$
+_go_.o          0           0     0     644     7054      `
+go object darwin amd64 go1.5.3 X:none
+
+!
+  go13ld,gopkg.in/mgo.v2/bson.a ş"".init     ”eH‹%    H;av4¶    €û t¶    €ûuÃè    Æ    è    Æ    Ãè    ë¶
+      $  "".initdoneÂ·   <  "".initdoneÂ·   R
+  "runtime.throwinit   b "".initdoneÂ·   n
+  2gopkg.in/mgo.v2/bson.init   z "".initdoneÂ·   ˆ
+  0runtime.morestack_noctxt        P P P 
+ (( TgclocalsÂ·33cdeccccebe80329f1fdbee7f5874cb TgclocalsÂ·33cdeccccebe80329f1fdbee7f5874cb   Ê/Users/yp-tc-m-2655/IdeaProjects/fluentd-demo/src/github.com/swhite24/go-rest-tutorial/models/user.goş$type..hash."".User    ŠeH‹%    H;a†è   Hƒì H‹\$(H‰$Hƒ<$ „Ä   H‹\$0H‰\$è    H‹D$H‹\$(H‰$Hƒ<$ „   Hƒ$H‰D$0H‰D$è    H‹D$H‹\$(H‰$Hƒ<$ t^Hƒ$ H‰D$0H‰D$è    H‹D$H‹\$(H‰$Hƒ<$ t,Hƒ$0H‰D$0H‰D$HÇD$   è    H‹\$H‰\$8HƒÄ Ã‰%    ëË‰%    ë™‰%    édÿÿÿ‰%    é0ÿÿÿè    éûşÿÿ
+      l
+  runtime.strhash   Æ
+  runtime.strhash   ˜
+  runtime.strhash   ü
+  runtime.memhash   ø
+  0runtime.morestack_noctxt   0@  "".~r2  type.uintptr "".h type.uintptr "".p  type.*"".User @¹?@?    5Û TgclocalsÂ·0b86ef39f3fed835f14ba5f4d7c62fa2 TgclocalsÂ·33cdeccccebe80329f1fdbee7f5874cb   Ê/Users/yp-tc-m-2655/IdeaProjects/fluentd-demo/src/github.com/swhite24/go-rest-tutorial/models/user.goş type..eq."".User à  ØeH‹%    H;a†Ï  HƒìhH‹\$pHƒû „µ  H‹3H‹KH‹\$xHƒû „˜  H‹H‹CH9Á…{  H‰t$XH‰4$H‰L$`H‰L$H‰T$HH‰T$H‰D$PH‰D$è    ¶\$ €û „A  H‹\$pHƒû „+  H‹sH‹KH‹\$xHƒû „  H‹SH‹CH9Á…ï   H‰t$8H‰4$H‰L$@H‰L$H‰T$(H‰T$H‰D$0H‰D$è    ¶\$ €û „µ   H‹\$pHƒû „Ÿ   H‹S H‹C(H‹\$xHƒû „   H‹s H‹K(H9ÈugH‰T$(H‰$H‰D$0H‰D$H‰t$8H‰t$H‰L$@H‰L$è    ¶\$ €û t1H‹l$pH‹]0L‹D$xI‹h0H9ëtÆ„$€    HƒÄhÃÆ„$€   HƒÄhÃÆ„$€    HƒÄhÃ‰éxÿÿÿ‰éZÿÿÿÆ„$€    HƒÄhÃ‰éìşÿÿ‰éÎşÿÿÆ„$€    HƒÄhÃ‰éaşÿÿ‰éDşÿÿè    éşÿÿ
+
+      è
+   runtime.eqstring   Ê
+   runtime.eqstring   ¤
+   runtime.eqstring   Æ
+  0runtime.morestack_noctxt   0Ğ  "".autotmp_0005  type.string "".autotmp_0004  type.string "".autotmp_0003 type.string "".autotmp_0002 _type.string "".autotmp_0001 ?Dtype.gopkg.in/mgo.v2/bson.ObjectId "".autotmp_0000 Dtype.gopkg.in/mgo.v2/bson.ObjectId "".~r2  type.bool "".q type.*"".User "".p  type.*"".User JĞìÏĞÏĞÏĞÏĞÏĞ ğ ğ  sı TgclocalsÂ·3bb21ca8fe1d99a3e492463bd711418a TgclocalsÂ·895d0569a38a56443b84805daa09d838   Ê/Users/yp-tc-m-2655/IdeaProjects/fluentd-demo/src/github.com/swhite24/go-rest-tutorial/models/user.goşTgclocalsÂ·33cdeccccebe80329f1fdbee7f5874cb           şTgclocalsÂ·33cdeccccebe80329f1fdbee7f5874cb           ş0"".initdoneÂ·  type.uint8   ş"".initÂ·f              "".init   şTgclocalsÂ·33cdeccccebe80329f1fdbee7f5874cb           şTgclocalsÂ·0b86ef39f3fed835f14ba5f4d7c62fa2             şTgclocalsÂ·895d0569a38a56443b84805daa09d838              şTgclocalsÂ·3bb21ca8fe1d99a3e492463bd711418a             ş,type..hashfunc."".User              $type..hash."".User   ş(type..eqfunc."".User               type..eq."".User   ş"type..alg."".User                        ,type..hashfunc."".User     (type..eqfunc."".User   ş"runtime.gcbits.01    ş8go.string.hdr."*models.User"                       0go.string."*models.User"   ş0go.string."*models.User"    *models.User  ştype.*"".User                    
+Î"‹ 6                                                        0   runtime.algarray   @  "runtime.gcbits.01   P  8go.string.hdr."*models.User"   p  ,go.weak.type.**"".User   €  "runtime.zerovalue     type."".User   ş"runtime.gcbits.15    ş6go.string.hdr."models.User"                       .go.string."models.User"   ş.go.string."models.User"    models.User  ş$go.string.hdr."Id"                       go.string."Id"   şgo.string."Id"   Id  şPgo.string.hdr."json:\"id\" bson:\"_id\""                       Hgo.string."json:\"id\" bson:\"_id\""   şHgo.string."json:\"id\" bson:\"_id\"" 0  *json:"id" bson:"_id"  ş(go.string.hdr."Name"                        go.string."Name"   ş go.string."Name"   
+Name  şVgo.string.hdr."json:\"name\" bson:\"name\""                       Ngo.string."json:\"name\" bson:\"name\""   şNgo.string."json:\"name\" bson:\"name\"" 0  0json:"name" bson:"name"  ş,go.string.hdr."Gender"                       $go.string."Gender"   ş$go.string."Gender"   Gender  ş^go.string.hdr."json:\"gender\" bson:\"gender\""                       Vgo.string."json:\"gender\" bson:\"gender\""   şVgo.string."json:\"gender\" bson:\"gender\"" @  8json:"gender" bson:"gender"  ş&go.string.hdr."Age"                       go.string."Age"   şgo.string."Age"   Age  şRgo.string.hdr."json:\"age\" bson:\"age\""                       Jgo.string."json:\"age\" bson:\"age\""   şJgo.string."json:\"age\" bson:\"age\"" 0  ,json:"age" bson:"age"  ş(go.string.hdr."User"                        go.string."User"   ş go.string."User"   
+User  şvgo.string.hdr."github.com/swhite24/go-rest-tutorial/models"             +          ngo.string."github.com/swhite24/go-rest-tutorial/models"   şngo.string."github.com/swhite24/go-rest-tutorial/models" `  Xgithub.com/swhite24/go-rest-tutorial/models  ş"go.importpath."".             +          ngo.string."github.com/swhite24/go-rest-tutorial/models"   ştype."".User  Ğ  Ğ8       (       9õ'                                                                                                                                                                                                                              0                                               ,0  "type..alg."".User   @  "runtime.gcbits.15   P  6go.string.hdr."models.User"   p  type.*"".User   €  "runtime.zerovalue   À type."".User   À  $go.string.hdr."Id"   à  Dtype.gopkg.in/mgo.v2/bson.ObjectId   ğ  Pgo.string.hdr."json:\"id\" bson:\"_id\""     (go.string.hdr."Name"   °  type.string   À  Vgo.string.hdr."json:\"name\" bson:\"name\""   à  ,go.string.hdr."Gender"   €  type.string     ^go.string.hdr."json:\"gender\" bson:\"gender\""   °  &go.string.hdr."Age"   Ğ  type.int   à  Rgo.string.hdr."json:\"age\" bson:\"age\""   `€ type."".User   €  (go.string.hdr."User"     "go.importpath."".    Ğ type."".User   ş.go.string.hdr."runtime"                       &go.string."runtime"   ş&go.string."runtime"   runtime  ş,go.importpath.runtime.                       &go.string."runtime"   şHgo.string.hdr."gopkg.in/mgo.v2/bson"                       @go.string."gopkg.in/mgo.v2/bson"   ş@go.string."gopkg.in/mgo.v2/bson" 0  *gopkg.in/mgo.v2/bson  şFgo.importpath.gopkg.in/mgo.v2/bson.                       @go.string."gopkg.in/mgo.v2/bson"   ş*type..hash."".UserÂ·f              $type..hash."".User   ş&type..eq."".UserÂ·f               type..eq."".User   ş"runtime.zerovalue      ÿÿgo13ld

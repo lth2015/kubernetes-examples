@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: gongyi
+  labels:
+    name: gongyi
+spec:
+  replicas: 2
+  selector:
+    name: gongyi
+  template:
+    metadata:
+      labels:
+        name: gongyi
+    spec:
+      containers:
+      - name: gongyi
+        image: registry.docker.company.com:5000/company/gongyi:v1.0.0
+        ports:
+        - containerPort: 8080

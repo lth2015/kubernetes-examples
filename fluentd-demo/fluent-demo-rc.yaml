@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: fluent-demo
+  labels:
+    name: fluent-demo
+spec:
+  replicas: 1
+  selector:
+    name: fluent-demo
+  template:
+    metadata:
+      labels:
+        name: fluent-demo
+    spec:
+      containers:
+      - name: fluent-demo
+        image: registry.docker:5000/fluent-demo:latest

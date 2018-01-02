@@ -1,0 +1,32 @@
+{
+  "spec": {
+    "ports": [
+      {
+        "nodePort": 32731,
+        "targetPort": 9001,
+        "port": 9001,
+        "protocol": "TCP",
+        "name": "manager"
+      },
+      {
+        "nodePort": 32732,
+        "targetPort": 8086,
+        "port": 8086,
+        "protocol": "TCP",
+        "name": "offset"
+      }
+    ],
+    "selector": {
+      "component": "kafka-manager"
+    },
+    "type": "NodePort"
+  },
+  "metadata": {
+    "labels": {
+      "component": "kafka-manager"
+    },
+    "name": "kafka-manager"
+  },
+  "apiVersion": "v1",
+  "kind": "Service"
+}

@@ -1,0 +1,125 @@
+{
+  "kind": "List",
+  "apiVersion": "v1",
+  "id": "zookeeper",
+  "items": [
+    {
+      "kind": "Service",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "zookeeper-5",
+        "labels": {
+          "name": "zookeeper-5"
+        }
+      },
+      "spec": {
+        "ports": [
+          {
+            "name": "client",
+            "port": 2181,
+            "targetPort": 2181
+          },
+          {
+            "name": "followers",
+            "port": 2888,
+            "targetPort": 2888
+          },
+          {
+            "name": "election",
+            "port": 3888,
+            "targetPort": 3888
+          }
+        ],
+        "selector": {
+          "server-id": "5"
+        }
+      }
+    },
+    {
+      "spec": {
+        "template": {
+          "spec": {
+            "volumes": [
+              {
+                "rbd": {
+                  "readOnly": false,
+                  "fsType": "xfs",
+                  "secretRef": {
+                    "name": "ceph-secret"
+                  },
+                  "user": "admin",
+                  "image": "zookeeper-5",
+                  "pool": "rbd",
+                  "monitors": [
+                    "10.149.149.3:6789"
+                  ]
+                },
+                "name": "zookeeper-5"
+              }
+            ],
+            "restartPolicy": "Always",
+            "containers": [
+              {
+                "volumeMounts": [
+                  {
+                    "name": "zookeeper-5",
+                    "mountPath": "/opt/zookeeper/data"
+                  }
+                ],
+                "ports": [
+                  {
+                    "protocol": "TCP",
+                    "name": "client",
+                    "containerPort": 2181
+                  },
+                  {
+                    "protocol": "TCP",
+                    "name": "followers",
+                    "containerPort": 2888
+                  },
+                  {
+                    "protocol": "TCP",
+                    "name": "election",
+                    "containerPort": 3888
+                  }
+                ],
+                "name": "zookeeper-5",
+                "image": "registry.docker:5000/fabric8/zookeeper",
+                "env": [
+                  {
+                    "name": "SERVER_ID",
+                    "value": "5"
+                  },
+                  {
+                    "name": "MAX_SERVERS",
+                    "value": "5"
+                  }
+		]
+              }
+            ]
+          },
+          "metadata": {
+	    "name": "zookeeper-5",
+            "labels": {
+	      "role": "zookeeper",
+	      "server-id": "5"
+            }
+          }
+        },
+        "selector": {
+           "role": "zookeeper",
+	   "server-id": "5"
+        },
+        "replicas": 1
+      },
+      "metadata": {
+        "name": "zookeeper-5",
+        "labels": {
+          "component": "zookeeper"
+        }
+      },
+      "kind": "ReplicationController",
+      "apiVersion": "v1"
+    }
+  ]
+}

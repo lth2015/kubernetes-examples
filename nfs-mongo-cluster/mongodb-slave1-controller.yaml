@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: mongo-slave1
+  labels:
+    name: mongo-slave
+spec:
+  replicas: 1
+  selector:
+    name: mongo-slave1
+  template:
+    metadata:
+      labels:
+        name: mongo-slave1
+    spec:
+      containers:
+      - name: slave1
+        image: mongo
+        command:
+          - mongod
+          - "--slave"
+          - "--source"
+          - mongo-master 
+          - "--smallfiles"
+        ports:
+        - containerPort: 27017
+        volumeMounts:
+        - name: nfs-mongo-slave1
+          mountPath: "/data/db"
+      volumes:
+      - name: nfs-mongo-slave1
+        server: 172.17.0.2
+        path: "/tmp"

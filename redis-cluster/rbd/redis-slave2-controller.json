@@ -1,0 +1,71 @@
+{
+  "spec": {
+    "template": {
+      "spec": {
+        "volumes": [
+          {
+            "rbd": {
+              "readOnly": false,
+              "fsType": "ext4",
+              "secretRef": {
+                "name": "ceph-secret"
+              },
+              "user": "admin",
+              "image": "redis-client2",
+              "pool": "rbd",
+              "monitors": [
+                "172.17.1.11:6789"
+              ]
+            },
+            "name": "redis-client2"
+          }
+        ],
+        "restartPolicy": "Always",
+        "containers": [
+          {
+            "volumeMounts": [
+              {
+                "name": "redis-client2",
+                "mountPath": "/data"
+              }
+            ],
+            "ports": [
+              {
+                "protocol": "TCP",
+                "name": "http",
+                "containerPort": 6379
+              }
+            ],
+            "name": "redis-client2",
+            "image": "registry.docker:5000/gcr/redis-slave:v1",
+            "env": [
+              {
+                "name": "GET_HOSTS_FROM",
+                "value": "dns"
+              }
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "labels": {
+          "name": "redis-client2",
+	  "role": "redis-client"
+        }
+      }
+    },
+    "selector": {
+      "name": "redis-client2"
+    },
+    "replicas": 1
+  },
+  "metadata": {
+    "name": "redis-client2",
+    "labels": {
+      "role": "redis-client",
+      "name": "redis-client2"
+    }
+  },
+  "kind": "ReplicationController",
+  "apiVersion": "v1"
+}

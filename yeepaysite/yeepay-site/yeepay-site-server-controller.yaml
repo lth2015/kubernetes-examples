@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: company-site
+  labels:
+    name: company-site
+spec:
+  replicas: 2
+  selector:
+    name: company-site
+  template:
+    metadata:
+      labels:
+        name: company-site
+    spec:
+      containers:
+      - name: company-site
+        image: registry.docker.company.com:5000/company/company-site:v1.0.0
+        ports:
+        - containerPort: 8080

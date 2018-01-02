@@ -1,0 +1,68 @@
+{
+  "apiVersion": "v1",
+  "kind": "Pod",
+  "metadata": {
+    "labels": {
+      "role": "kafka-1",
+      "component": "kafka"
+    },
+    "name": "kafka-1"
+  },
+  "spec": {
+    "containers": [
+      {
+        "name": "kafka-1",
+        "image": "img.reg.3g:15000/company/kafka:2.11-0.9.0",
+        "ports": [
+          {
+            "containerPort": 9092
+          }
+        ],
+        "command": [
+          "/bin/sh",
+          "-c"
+        ],
+        "args": [
+          "sed -i -- 's/broker.id=0/broker.id=1/g' /home/kafka/config/server.properties &&  IP=`ifconfig eth0 |  grep 'inet addr:' | awk -F ':' '{print $2}' | awk '{print $1}'` && echo $IP &&  sed -i -- \"s/host.name=KAFKA/host.name=$IP/g\" /home/kafka/config/server.properties && sed -i -- 's/advertised.port=KAFKA/advertised.port=9092/g' /home/kafka/config/server.properties && sed -i -- 's/num.network.threads=3/num.network.threads=10/g' /home/kafka/config/server.properties && sed -i -- 's/num.io.threads=8/num.io.threads=20/g' /home/kafka/config/server.properties && sed -i -- 's/zookeeper.connect=localhost:2181/zookeeper.connect=zookeeper-1:2181,zookeeper-2:2181,zookeeper-3:2181,zookeeper-4:2181,zookeeper-5:2181/g' /home/kafka/config/server.properties && /home/kafka/bin/kafka-server-start.sh /home/kafka/config/server.properties "
+        ],
+        "resources": {
+          "requests": {
+            "cpu": "1",
+            "memory": "1024M"
+          },
+          "limits": {
+            "cpu": "4",
+            "memory": "8192M"
+          }
+        },
+        "volumeMounts": [
+          {
+            "mountPath": "/tmp/kafka-logs",
+            "name": "kafka-1"
+          }
+        ]
+      }
+    ],
+    "restartPolicy": "Always",
+    "volumes": [
+      {
+        "name": "kafka-1",
+        "rbd": {
+          "monitors": [
+            "10.151.32.27:6789",
+            "10.151.32.29:6789",
+            "10.151.32.32:6789"
+          ],
+          "pool": "rbd",
+          "image": "log-kafka-1",
+          "user": "admin",
+          "secretRef": {
+            "name": "ceph-secret-default"
+          },
+          "fsType": "ext4",
+          "readOnly": false
+        }
+      }
+    ]
+  }
+}

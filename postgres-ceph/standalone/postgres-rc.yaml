@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: postgres
+  labels:
+    role: postgres-standalone
+spec:
+  replicas: 1
+  selector:
+    role: postgres-standalone
+  template:
+    metadata:
+      labels:
+        role: postgres-standalone
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:latest
+        env:
+        - name: DB_USER
+          value: "postgres"
+        - name: DB_PASS
+          value: "postgres"
+        ports:
+        ports:
+        - containerPort: 5432
+          name: transport
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /data
+          name: storage
+      volumes:
+      - name: storage
+        rbd: 
+          monitors:
+            - "10.149.149.2:6789"
+            - "10.149.149.3:6789"
+            - "10.149.149.4:6789"
+          pool: rbd
+          image: postgres
+          secretRef:
+            name: ceph-secret
+          fsType: ext4
+          readOnly: false

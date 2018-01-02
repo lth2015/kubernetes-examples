@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: push-portal
+  labels:
+    name: push-portal
+spec:
+  replicas: 2
+  selector:
+    name: push-portal
+  template:
+    metadata:
+      labels:
+        name: push-portal
+    spec:
+      containers:
+      - name: push-portal
+        image: registry.test.com:5000/push-portal:v1
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: "2"
+            memory: "4096Mi"
+        livenessProbe:
+          httpGet:
+            path: /push-portal/healthz
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 120
+        volumeMounts:
+        - mountPath: /apps/log
+          name: storage
+      volumes:
+      - name: storage
+        source:
+          emptyDir: {}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="true">
+    <appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %5p %c{1} - %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="fluentd" class="com.company.monitor.sender.FluentAppender" >
+        <param name="host" value="transfer4j:24324"/>
+        <param name="tag" value="tag"/>
+        <param name="label" value="label"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d %5p %c - %m" />
+        </layout>
+    </appender>
+
+    <root>
+
+        <level value ="info" />
+        <appender-ref ref="fluentd" />
+    </root>
+</log4j:configuration>

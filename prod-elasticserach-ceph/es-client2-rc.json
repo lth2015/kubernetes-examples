@@ -1,0 +1,113 @@
+{
+  "spec": {
+    "template": {
+      "spec": {
+        "volumes": [
+          {
+            "rbd": {
+              "readOnly": false,
+              "fsType": "ext4",
+              "secretRef": {
+                "name": "ceph-secret"
+              },
+              "user": "admin",
+              "image": "esclient2",
+              "pool": "rbd",
+              "monitors": [
+                "172.17.1.11:6789"
+              ]
+            },
+            "name": "es-client2"
+          }
+        ],
+        "serviceAccount": "elasticsearch",
+        "restartPolicy": "Always",
+        "containers": [
+          {
+            "volumeMounts": [
+              {
+                "name": "es-client2",
+                "mountPath": "/data"
+              }
+            ],
+            "securityContext": {
+              "privileged": false,
+              "capabilities": {
+                "add": [
+                  "IPC_LOCK"
+                ]
+              }
+            },
+            "ports": [
+              {
+                "protocol": "TCP",
+                "name": "http",
+                "containerPort": 9200
+              },
+              {
+                "protocol": "TCP",
+                "name": "transport",
+                "containerPort": 9300
+              }
+            ],
+            "name": "es-client2",
+            "image": "registry.docker:5000/company/elasticsearch:2.1.1",
+            "env": [
+              {
+                "value": "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt",
+                "name": "KUBERNETES_CA_CERTIFICATE_FILE"
+              },
+              {
+                "valueFrom": {
+                  "fieldRef": {
+                    "fieldPath": "metadata.namespace"
+                  }
+                },
+                "name": "NAMESPACE"
+              },
+              {
+                "value": "myesdb",
+                "name": "CLUSTER_NAME"
+              },
+              {
+                "value": "false",
+                "name": "NODE_MASTER"
+              },
+              {
+                "value": "false",
+                "name": "NODE_DATA"
+              },
+              {
+                "value": "true",
+                "name": "HTTP_ENABLE"
+              }
+            ]
+          }
+        ]
+      },
+      "metadata": {
+        "labels": {
+          "role": "client",
+          "client2": "true",
+          "component": "elasticsearch"
+        }
+      }
+    },
+    "selector": {
+      "role": "client",
+      "client2": "true",
+      "component": "elasticsearch"
+    },
+    "replicas": 1
+  },
+  "metadata": {
+    "name": "es-client2",
+    "labels": {
+      "role": "client",
+      "client2": "true",
+      "component": "elasticsearch"
+    }
+  },
+  "kind": "ReplicationController",
+  "apiVersion": "v1"
+}

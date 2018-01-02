@@ -1,0 +1,346 @@
+# In v1 configuration, type and id are @ prefix parameters.
+# @type and @id are recommended. type and id are still available for backward compatibility
+
+## built-in TCP input
+## $ echo <json> | fluent-cat <tag>
+<source>
+  type forward
+  id forward_input
+</source>
+
+## built-in UNIX socket input
+#<source>
+#  @type unix
+#</source>
+
+# HTTP input
+# http://localhost:8888/<tag>?json=<json>
+<source>
+  type http
+  id http_input
+
+  port 8888
+</source>
+
+## File input
+## read apache logs with tag=apache.access
+#<source>
+#  @type tail
+#  format apache
+#  path /var/log/httpd-access.log
+#  tag apache.access
+#</source>
+
+# Listen HTTP for monitoring
+# http://localhost:24220/api/plugins
+# http://localhost:24220/api/plugins?type=TYPE
+# http://localhost:24220/api/plugins?tag=MYTAG
+<source>
+  type monitor_agent
+  id monitor_agent_input
+
+  port 24220
+</source>
+
+# Listen DRb for debug
+<source>
+  type debug_agent
+  id debug_agent_input
+
+  bind 127.0.0.1
+  port 24230
+</source>
+<source>
+  id safe_input
+  type syslog
+  port 5140
+  bind 0.0.0.0
+  format syslog
+  tag system
+</source>
+
+## match tag=apache.access and write to file
+#<match apache.access>
+#  @type file
+#  path /var/log/fluent/access
+#</match>
+
+## match tag=debug.** and dump to console
+<match debug.**>
+  type stdout
+  id stdout_output
+</match>
+
+<match es.java.relay.**>
+  type forest
+  subtype elasticsearch
+  remove_prefix es
+  <template>
+    logstash_prefix ${tag_parts[1]}
+    logstash_dateformat %Y-%m-%d
+    hosts 10.148.180.22:9200,10.148.180.23:9200,10.148.180.11:9200,10.148.180.12:9200,10.148.180.13:9200,10.148.180.21:9200
+    type_name fluentd
+    logstash_format true
+    flush_interval 5s
+    request_timeout 10s
+    num_threads 4
+    buffer_type file
+    buffer_path /var/log/fluentd/.${tag}.buffer
+    buffer_chunk_limit 1m
+  </template>
+</match>
+
+<match es.java.instantpay.**>
+  type forest
+  subtype elasticsearch
+  remove_prefix es
+  <template>
+    logstash_prefix ${tag_parts[1]}
+    logstash_dateformat %Y-%m-%d
+    hosts 10.148.180.22:9200,10.148.180.23:9200,10.148.180.11:9200,10.148.180.12:9200,10.148.180.13:9200,10.148.180.21:9200
+    type_name fluentd
+    logstash_format true
+    flush_interval 5s
+    request_timeout 10s
+    num_threads 4
+    buffer_type file
+    buffer_path /var/log/fluentd/.${tag}.buffer
+    buffer_chunk_limit 1m
+  </template>
+</match>
+
+<match es.java.txp.core>
+  type record_modifier
+  id txp.core.encoding
+
+  char_encoding cp936:utf-8
+  tag es.encode.txp.core
+</match>
+<match es.java.dal>
+  type record_modifier
+  id dal.encoding
+
+  char_encoding cp936:utf-8
+  tag es.encode.dal
+</match>
+<match es.java.zgt.hessian>
+  type record_modifier
+  id zgt.hessian.encoding
+
+  char_encoding cp936:utf-8
+  tag es.encode.zgt.hessian
+</match>
+<match es.java.skb.core>
+  type record_modifier
+  id skb.core.encoding
+
+  char_encoding cp936:utf-8
+  tag es.encode.skb.core
+</match>
+
+<match es.accesslog.**>
+  type forest
+
+  subtype elasticsearch
+  remove_prefix es
+  <template>
+    logstash_prefix __TAG_PARTS[1]__
+    logstash_dateformat %Y-%m-%d
+    hosts 10.148.180.22:9200,10.148.180.23:9200,10.148.180.11:9200,10.148.180.12:9200,10.148.180.13:9200,10.148.180.21:9200
+    type_name accesslog
+    logstash_format true
+    flush_interval 5s
+    request_timeout 10s
+    num_threads 4
+    buffer_type file
+    buffer_path /var/log/fluentd/.accesslog.buffer
+    buffer_chunk_limit 1m
+  </template>
+</match>
+
+<match es.monitor.transreq>
+  type forest
+
+  subtype elasticsearch
+  remove_prefix es
+  <template>
+    logstash_prefix __TAG_PARTS[1]__
+    logstash_dateformat %Y-%m-%d
+    hosts 10.148.180.22:9200,10.148.180.23:9200,10.148.180.11:9200,10.148.180.12:9200,10.148.180.13:9200,10.148.180.21:9200
+    type_name monitor
+    logstash_format true
+    time_key timestamp
+    flush_interval 5s
+    request_timeout 10s
+    num_threads 2
+    buffer_type file
+    buffer_path /var/log/fluentd/.${tag}.buffer
+    buffer_chunk_limit 1m
+  </template>
+</match>
+
+<match es.encode.dal>
+  type forest
+
+  subtype elasticsearch
+  remove_prefix es
+  <template>
+    logstash_prefix daltest
+    logstash_dateformat %Y-%m-%d
+    hosts 10.148.180.22:9200,10.148.180.23:9200,10.148.180.11:9200,10.148.180.12:9200,10.148.180.13:9200,10.148.180.21:9200
+    type_name dal
+    logstash_format true
+    time_key time
+    flush_interval 5s
+    request_timeout 10s
+    num_threads 2
+    buffer_type file
+    buffer_path /var/log/fluentd/.${tag}.buffer
+    buffer_chunk_limit 1m
+  </template>
+</match>
+
+<match bigdata.monitor.bankroute2>
+  type forest
+
+  subtype elasticsearch
+  remove_prefix bigdata 
+  <template>
+    logstash_prefix mqtest
+    logstash_dateformat %Y-%m-%d
+    hosts 10.148.180.22:9200,10.148.180.23:9200,10.148.180.11:9200,10.148.180.12:9200,10.148.180.13:9200,10.148.180.21:9200
+    type_name monitor
+    logstash_format true
+    time_key TIME
+    flush_interval 5s
+    request_timeout 10s
+    num_threads 2
+    buffer_type file
+    buffer_path /var/log/fluentd/.${tag}.buffer
+    buffer_chunk_limit 1m
+  </template>
+</match>
+
+<match es.**>
+  type forest
+
+  subtype elasticsearch
+  remove_prefix es
+  <template>
+    logstash_prefix __TAG_PARTS[1]__
+    logstash_dateformat %Y-%m-%d
+    #hosts 10.149.200.41:9200
+    hosts 10.148.180.22:9200,10.148.180.23:9200,10.148.180.11:9200,10.148.180.12:9200,10.148.180.13:9200,10.148.180.21:9200
+    #index_name fluentd
+    type_name fluentd
+    logstash_format true
+    #time_key timestamp
+    flush_interval 5s
+    request_timeout 10s
+    num_threads 4
+    buffer_type file
+    buffer_path /var/log/fluentd/.${tag}.buffer
+    buffer_chunk_limit 1m
+  </template>
+</match>
+
+<match kafka.bankroutemonitor>
+  type                kafka
+
+  zookeeper           10.148.180.100:2181,10.148.180.101:2181,10.148.180.102:2181
+
+  default_topic       bigdata.log.bankroute
+  output_data_type    json
+  required_acks       1
+</match>
+
+<match kafka.monitor.transreq>
+  type                kafka
+
+  zookeeper           10.148.180.100:2181,10.148.180.101:2181,10.148.180.102:2181
+
+  default_topic       bigdata.monitor.transreq
+  output_data_type    json
+  required_acks       1
+</match>
+
+<match kafka.monitor.merchant-notify>
+  type                kafka
+
+  zookeeper           10.148.180.100:2181,10.148.180.101:2181,10.148.180.102:2181 
+
+  default_topic       bigdata.monitor.mnotify2
+  output_data_type    json
+  required_acks       1
+</match>
+
+<source>
+  type   kafka
+  host   10.148.180.22
+  port   9092
+  partition 0  
+  topics bigdata.monitor.bankroute
+  format text
+  #tag monitor.bankroute
+</source>
+<source>
+  type   kafka
+  host   10.148.180.22
+  port   9093
+  partition 1
+  topics bigdata.monitor.bankroute
+  format text
+  #tag monitor.bankroute
+</source>
+
+<match monitor.nc-pay.core>
+  type                kafka
+
+  zookeeper           10.148.180.100:2181,10.148.180.101:2181,10.148.180.102:2181
+
+  default_topic       monitor.instantpay.trans
+  output_data_type    json
+  required_acks       1
+</match>
+
+<match bigdata.monitor.bankroute>
+  type parser
+  id text2json
+  format json
+  key_name message
+  tag monitor.bankroute
+</match>
+
+<match system.**>
+  type rewrite_tag_filter
+  rewriterule1 ident ^sudo$  sudo  # sudo events
+  rewriterule2 ident .*      clear # everyone else
+</match>
+# This one matches for the exact sudo syslog messages that we want to parse
+# # and re-tags it with "sudo_parse_it"
+<match sudo>
+  type rewrite_tag_filter
+  rewriterule1 message PWD=[^ ]+ ; USER=[^ ]+ ; COMMAND=.*$ sudo_parse_it
+  rewriterule2 message .* clear
+</match>
+
+# This one parses the message field and emits it with the sudoer, password_user and 
+# # command. Then, it emits the parsed event with the tag "sudo_parsed"
+<match sudo_parse_it>
+  type parser
+  key_name message # this is the field to be parsed
+  format /PWD=(?<password>[^ ]+) ; USER=(?<sudoer>[^ ]+) ; COMMAND=(?<comamnd>.*)$/
+  tag sudo_parsed
+</match>
+
+# Finally, emitting the data to stdout to confirm the behavior!
+<match sudo_parsed>
+  type stdout
+</match>
+
+<match monitor.bankroute>
+  type stdout
+</match>
+<match clear>
+  type null
+</match>

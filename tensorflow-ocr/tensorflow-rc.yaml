@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: tensorflow
+  labels:
+    name: tensorflow
+spec:
+  replicas: 1
+  selector:
+    name: tensorflow
+  template:
+    metadata:
+      labels:
+        name: tensorflow
+    spec:
+      containers:
+      - name: tensorflow
+        image: img.reg.3g:15000/tensorflow:ocr-1.0
+        ports:
+        - containerPort: 8880
+          name: port1
+          protocol: TCP
+        - containerPort: 8881
+          name: port2
+          protocol: TCP
+        - containerPort: 8882
+          name: port3
+          protocol: TCP
+        - containerPort: 8884
+          name: port4
+          protocol: TCP
+        - containerPort: 8889
+          name: port5
+          protocol: TCP
+        resources:
+          limits:
+            cpu: "2"
+            memory: "4096Mi"

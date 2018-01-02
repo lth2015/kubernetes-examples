@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kibana
+  labels:
+    name: kibana
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 5601
+    targetPort: 5601
+    nodePort: 32763
+  type: "NodePort"
+  selector:
+    name: kibana

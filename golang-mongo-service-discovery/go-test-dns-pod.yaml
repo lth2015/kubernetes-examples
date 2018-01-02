@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: go-test-dns
+labels:
+  name: go-test-dns
+spec:
+  containers:
+    - name: go-test-dns
+      image: company/go-test-dns

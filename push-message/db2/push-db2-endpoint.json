@@ -1,0 +1,17 @@
+{
+    "kind": "Endpoints",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "push-db2"
+    },
+    "subsets": [
+        {
+            "addresses": [
+                { "IP": "172.17.106.194" }
+            ],
+            "ports": [
+                { "port": 50000 }
+            ]
+        }
+    ]
+}

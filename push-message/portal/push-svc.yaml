@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: push-portal
+  labels:
+    name: push-portal
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+    nodePort: 32703
+  type: "NodePort"
+  selector:
+    name: push-portal

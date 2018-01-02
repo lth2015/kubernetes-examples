@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: fluentd-writer
+  labels:
+    name: fluentd-writer
+spec:
+  replicas: 1
+  selector:
+    name: fluentd-writer
+  template:
+    metadata:
+      labels:
+        name: fluentd-writer
+    spec:
+      containers:
+      - name: fluentd-writer
+        image: registry.docker.company.com:5000/company/fluentd-writer
+        volumeMounts:
+        - name: docker
+          mountPath: "/var/lib/docker/containers"
+      volumes:
+        - name: docker
+          hostPath: 
+            path: "/var/lib/docker/containers"

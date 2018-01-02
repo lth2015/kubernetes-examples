@@ -1,0 +1,19 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "company-image",
+        "labels": {
+           "name": "company-image"
+        }
+    },
+    "spec": {
+        "ports": [
+            {
+                "protocol": "TCP",
+                "port": 8088,
+                "targetPort": 8088
+            }
+        ]
+    }
+}

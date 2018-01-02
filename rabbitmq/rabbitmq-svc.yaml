@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbitmq
+  labels:
+    type: rabbitmq
+    role: mq
+spec:
+  ports:
+  - port: 5672
+    targetPort: 5672
+    nodePort: 32672
+    protocol: TCP
+  selector:
+    type: rabbitmq
+    role: mq

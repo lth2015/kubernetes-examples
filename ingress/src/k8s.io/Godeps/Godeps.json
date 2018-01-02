@@ -1,0 +1,6 @@
+{
+	"ImportPath": "k8s.io",
+	"GoVersion": "go1.5",
+	"GodepVersion": "v61",
+	"Deps": []
+}

@@ -1,0 +1,88 @@
+{
+  "apiVersion": "v1",
+  "kind": "ReplicationController",
+  "metadata": {
+    "labels": {
+      "component": "zookeeper"
+    },
+    "name": "zookeeper-1"
+  },
+  "spec": {
+    "replicas": 1,
+    "selector": {
+      "server-id": "1",
+      "role": "zookeeper-1"
+    },
+    "template": {
+      "metadata": {
+        "labels": {
+          "server-id": "1",
+          "role": "zookeeper-1"
+        },
+        "name": "zookeeper-1"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "value": "1",
+                "name": "SERVER_ID"
+              },
+              {
+                "value": "5",
+                "name": "MAX_SERVERS"
+              }
+            ],
+            "image": "img.reg.3g:15000/fabric8/zookeeper:latest",
+            "name": "zookeeper-1",
+            "ports": [
+              {
+                "containerPort": 2181,
+                "name": "client",
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 2888,
+                "name": "followers",
+                "protocol": "TCP"
+              },
+              {
+                "containerPort": 3888,
+                "name": "election",
+                "protocol": "TCP"
+              }
+            ],
+            "volumeMounts": [
+              {
+                "mountPath": "/opt/zookeeper/data",
+                "name": "zookeeper-1"
+              }
+            ]
+          }
+        ],
+        "restartPolicy": "Always",
+        "volumes": [
+          {
+            "name": "zookeeper-1",
+            "rbd": {
+              "monitors": [
+                "10.151.32.27:6789",
+                "10.151.32.29:6789",
+                "10.151.32.32:6789"
+              ],
+              "pool": "rbd",
+              "image": "log-zookeeper-1",
+              "user": "admin",
+              "secretRef": {
+                "name": "ceph-secret-default"
+              },
+              "fsType": "ext4",
+              "readOnly": false
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+    "kind": "Endpoints",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "zookeeper"
+    },
+    "subsets": [
+        {
+            "addresses": [
+                { "IP": "172.23.89.3" },
+                { "IP": "172.23.5.5" },
+                { "IP": "172.23.87.4" },
+                { "IP": "172.23.98.5" },
+                { "IP": "172.23.11.4" }
+            ],
+            "ports": [
+                { "name": "2181", "port": 2181 },
+                { "name": "2888", "port": 2888 },
+                { "name": "3888", "port": 3888 }
+            ]
+        }
+    ]
+}

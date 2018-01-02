@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: push-android
+  labels:
+    name: push-android
+spec:
+  ports:
+    # the port that this service should serve on
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+    nodePort: 32701
+  type: "NodePort"
+  selector:
+    name: push-android

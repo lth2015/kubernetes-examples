@@ -1,0 +1,19 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "push-db2",
+        "labels": {
+           "name": "push-db2"
+        }
+    },
+    "spec": {
+        "ports": [
+            {
+                "protocol": "TCP",
+                "port": 50000,
+                "targetPort": 50000 
+            }
+        ]
+    }
+}

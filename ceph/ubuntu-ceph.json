@@ -1,0 +1,39 @@
+{
+    "apiVersion": "v1",
+    "kind": "Pod",
+    "metadata": {
+        "name": "ubuntu-ceph"
+    },
+    "spec": {
+        "containers": [
+            {
+                "name": "ubuntu-ceph",
+                "image": "registry.test.com:5000/ubuntu-ceph",
+                "volumeMounts": [
+                    {
+                        "mountPath": "/data",
+                        "name": "ceph"
+                    }
+                ]
+            }
+        ],
+        "volumes": [
+            {
+                "name": "ceph",
+                "rbd": {
+                    "monitors": [
+        						"172.21.1.11:6789"
+    				 ],
+                    "pool": "rbd",
+                    "image": "foo",
+                    "user": "admin",
+                    "secretRef": {
+						  "name": "ceph-secret"
+					 },
+                    "fsType": "ext4",
+                    "readOnly": false 
+                }
+            }
+        ]
+    }
+}

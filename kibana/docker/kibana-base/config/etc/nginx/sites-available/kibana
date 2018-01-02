@@ -1,0 +1,47 @@
+server {
+  listen   80; ## listen for ipv4; this line is default and implied
+  listen   [::]:80 default ipv6only=on; ## listen for ipv6
+
+  # Make site accessible from http://localhost/
+  server_name localhost;
+
+  location = /health {
+    return 200;
+    access_log off;
+  }
+
+  location / {
+    root /opt/kibana-3.1.2;
+    index index.html index.htm;
+  }
+
+  # Reverse proxy elasticsearch ajax calls
+  location ~ ^/_aliases$ {
+    proxy_pass http://@ES_HOST@:@ES_PORT@;
+    proxy_read_timeout 90;
+  }
+  location ~ ^/.*/_aliases$ {
+    proxy_pass http://@ES_HOST@:@ES_PORT@;
+    proxy_read_timeout 90;
+  }
+  location ~ ^/_nodes$ {
+    proxy_pass http://@ES_HOST@:@ES_PORT@;
+    proxy_read_timeout 90;
+  }
+  location ~ ^/.*/_search$ {
+    proxy_pass http://@ES_HOST@:@ES_PORT@;
+    proxy_read_timeout 90;
+  }
+  location ~ ^/.*/_mapping {
+    proxy_pass http://@ES_HOST@:@ES_PORT@;
+    proxy_read_timeout 90;
+  }
+  location ~ ^/kibana-int/dashboard/.*$ {
+    proxy_pass http://@ES_HOST@:@ES_PORT@;
+    proxy_read_timeout 90;
+  }
+  location ~ ^/kibana-int/temp.*$ {
+    proxy_pass http://@ES_HOST@:@ES_PORT@;
+    proxy_read_timeout 90;
+  }
+}

@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: redis-slave-memory
+  labels:
+    name: redis-slave-memory
+spec:
+  replicas: 2
+  selector:
+    name: redis-slave-memory
+  template:
+    metadata:
+      labels:
+        name: redis-slave-memory
+    spec:
+      containers:
+      - name: worker-memory
+        image: registry.docker:5000/gcr/redis-slave:v1
+        env:
+        - name: GET_HOSTS_FROM
+          value: dns
+        ports:
+        - containerPort: 6379
+        resources:
+          limits:
+            cpu: "20"
+            memory: "40960M"

@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: fluentd-collector
+  labels:
+    name: fluentd-collector
+spec:
+  replicas: 1
+  selector:
+    name: fluentd-collector
+  template:
+    metadata:
+      labels:
+        name: fluentd-collector
+    spec:
+      containers:
+      - name: fluentd-collector
+        image: registry.docker.company.com:5000/company/fluentd-collector
+        volumeMounts:
+        - name: docker
+          mountPath: "/var/lib/docker/containers"
+      volumes:
+        - name: docker
+          hostPath: 
+            path: "/var/lib/docker/containers"

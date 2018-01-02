@@ -1,0 +1,19 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "mongo-replica",
+        "labels": {
+           "name": "mongo-replica"
+        }
+    },
+    "spec": {
+        "ports": [
+            {
+                "protocol": "TCP",
+                "port": 27017,
+                "targetPort": 27017
+            }
+        ]
+    }
+}

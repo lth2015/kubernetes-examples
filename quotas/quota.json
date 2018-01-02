@@ -1,0 +1,18 @@
+{
+  "spec": {
+    "hard": {
+      "resourcequotas": "1",
+      "replicationcontrollers": "20",
+      "services": "5",
+      "pods": "10",
+      "cpu": "20",
+      "memory": "1Gi"
+    }
+  },
+  "metadata": {
+    "namespace": "demos",
+    "name": "quota"
+  },
+  "kind": "ResourceQuota",
+  "apiVersion": "v1"
+}

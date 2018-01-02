@@ -1,0 +1,1710 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>ActorModel - kafka.manager.ActorModel</title>
+          <meta name="description" content="ActorModel - kafka.manager.ActorModel" />
+          <meta name="keywords" content="ActorModel kafka.manager.ActorModel" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../lib/template.js"></script>
+      <script type="text/javascript" src="../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../index.html';
+            var hash = 'kafka.manager.ActorModel$';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../lib/object_big.png" />
+        <p id="owner"><a href="../package.html" class="extype" name="kafka">kafka</a>.<a href="package.html" class="extype" name="kafka.manager">manager</a></p>
+        <h1>ActorModel</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="kafka.manager">package manager</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ActorModel</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="kafka.manager.ActorModel"><span>ActorModel</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="kafka.manager.ActorModel.ActorErrorResponse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ActorErrorResponseextendsActorModel.ActorResponsewithProductwithSerializable"></a>
+      <a id="ActorErrorResponse:ActorErrorResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$ActorErrorResponse.html"><span class="name">ActorErrorResponse</span></a><span class="params">(<span name="msg">msg: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="throwableOption">throwableOption: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Throwable">Throwable</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="ActorModel$$ActorResponse.html" class="extype" name="kafka.manager.ActorModel.ActorResponse">ActorResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@ActorErrorResponseextendsActorModel.ActorResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.ActorRequest" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ActorRequestextendsAnyRef"></a>
+      <a id="ActorRequest:ActorRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$ActorRequest.html"><span class="name">ActorRequest</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@ActorRequestextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.ActorResponse" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ActorResponseextendsAnyRef"></a>
+      <a id="ActorResponse:ActorResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$ActorResponse.html"><span class="name">ActorResponse</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@ActorResponseextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.BVGetView" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BVGetViewextendsActorModel.BVRequestwithProductwithSerializable"></a>
+      <a id="BVGetView:BVGetView"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$BVGetView.html"><span class="name">BVGetView</span></a><span class="params">(<span name="id">id: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="ActorModel$$BVRequest.html" class="extype" name="kafka.manager.ActorModel.BVRequest">BVRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@BVGetViewextendsActorModel.BVRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.BVRequest" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="BVRequestextendsActorModel.QueryRequest"></a>
+      <a id="BVRequest:BVRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$BVRequest.html"><span class="name">BVRequest</span></a><span class="result"> extends <a href="ActorModel$$QueryRequest.html" class="extype" name="kafka.manager.ActorModel.QueryRequest">QueryRequest</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@BVRequestextendsActorModel.QueryRequest" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.BVView" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BVViewextendsActorModel.QueryResponsewithProductwithSerializable"></a>
+      <a id="BVView:BVView"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$BVView.html"><span class="name">BVView</span></a><span class="params">(<span name="topicPartitions">topicPartitions: <span class="extype" name="scala.Predef.Map">Map</span>[<a href="TopicIdentity.html" class="extype" name="kafka.manager.TopicIdentity">TopicIdentity</a>, <span class="extype" name="scala.IndexedSeq">IndexedSeq</span>[<span class="extype" name="scala.Int">Int</span>]]</span>)</span><span class="result"> extends <a href="ActorModel$$QueryResponse.html" class="extype" name="kafka.manager.ActorModel.QueryResponse">QueryResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@BVViewextendsActorModel.QueryResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.BrokerInfo" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BrokerInfoextendsProductwithSerializable"></a>
+      <a id="BrokerInfo:BrokerInfo"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$BrokerInfo.html"><span class="name">BrokerInfo</span></a><span class="params">(<span name="id">id: <span class="extype" name="scala.Int">Int</span></span>, <span name="config">config: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@BrokerInfoextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.BrokerList" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BrokerListextendsActorModel.QueryResponsewithProductwithSerializable"></a>
+      <a id="BrokerList:BrokerList"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$BrokerList.html"><span class="name">BrokerList</span></a><span class="params">(<span name="list">list: <span class="extype" name="scala.IndexedSeq">IndexedSeq</span>[<a href="ActorModel$$BrokerInfo.html" class="extype" name="kafka.manager.ActorModel.BrokerInfo">BrokerInfo</a>]</span>)</span><span class="result"> extends <a href="ActorModel$$QueryResponse.html" class="extype" name="kafka.manager.ActorModel.QueryResponse">QueryResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@BrokerListextendsActorModel.QueryResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CMAddTopicPartitions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CMAddTopicPartitionsextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="CMAddTopicPartitions:CMAddTopicPartitions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CMAddTopicPartitions.html"><span class="name">CMAddTopicPartitions</span></a><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="brokers">brokers: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>]</span>, <span name="partitions">partitions: <span class="extype" name="scala.Int">Int</span></span>, <span name="partitionReplicaList">partitionReplicaList: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>]]</span>, <span name="readVersion">readVersion: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CMAddTopicPartitionsextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CMCommandResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CMCommandResultextendsActorModel.CommandResponsewithProductwithSerializable"></a>
+      <a id="CMCommandResult:CMCommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CMCommandResult.html"><span class="name">CMCommandResult</span></a><span class="params">(<span name="result">result: <span class="extype" name="scala.util.Try">Try</span>[<span class="extype" name="scala.Unit">Unit</span>]</span>)</span><span class="result"> extends <a href="ActorModel$$CommandResponse.html" class="extype" name="kafka.manager.ActorModel.CommandResponse">CommandResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CMCommandResultextendsActorModel.CommandResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CMCommandResults" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CMCommandResultsextendsActorModel.CommandResponsewithProductwithSerializable"></a>
+      <a id="CMCommandResults:CMCommandResults"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CMCommandResults.html"><span class="name">CMCommandResults</span></a><span class="params">(<span name="result">result: <span class="extype" name="scala.IndexedSeq">IndexedSeq</span>[<span class="extype" name="scala.util.Try">Try</span>[<span class="extype" name="scala.Unit">Unit</span>]]</span>)</span><span class="result"> extends <a href="ActorModel$$CommandResponse.html" class="extype" name="kafka.manager.ActorModel.CommandResponse">CommandResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CMCommandResultsextendsActorModel.CommandResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CMCreateTopic" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CMCreateTopicextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="CMCreateTopic:CMCreateTopic"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CMCreateTopic.html"><span class="name">CMCreateTopic</span></a><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="partitions">partitions: <span class="extype" name="scala.Int">Int</span></span>, <span name="replicationFactor">replicationFactor: <span class="extype" name="scala.Int">Int</span></span>, <span name="config">config: <span class="extype" name="java.util.Properties">Properties</span> = <span class="symbol">new Properties</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CMCreateTopicextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CMDeleteTopic" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CMDeleteTopicextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="CMDeleteTopic:CMDeleteTopic"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CMDeleteTopic.html"><span class="name">CMDeleteTopic</span></a><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CMDeleteTopicextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CMGeneratePartitionAssignments" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CMGeneratePartitionAssignmentsextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="CMGeneratePartitionAssignments:CMGeneratePartitionAssignments"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CMGeneratePartitionAssignments.html"><span class="name">CMGeneratePartitionAssignments</span></a><span class="params">(<span name="topics">topics: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="brokers">brokers: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>]</span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CMGeneratePartitionAssignmentsextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CMRunPreferredLeaderElection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CMRunPreferredLeaderElectionextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="CMRunPreferredLeaderElection:CMRunPreferredLeaderElection"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CMRunPreferredLeaderElection.html"><span class="name">CMRunPreferredLeaderElection</span></a><span class="params">(<span name="topics">topics: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CMRunPreferredLeaderElectionextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CMRunReassignPartition" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CMRunReassignPartitionextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="CMRunReassignPartition:CMRunReassignPartition"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CMRunReassignPartition.html"><span class="name">CMRunReassignPartition</span></a><span class="params">(<span name="topics">topics: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CMRunReassignPartitionextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CMUpdateTopicConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CMUpdateTopicConfigextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="CMUpdateTopicConfig:CMUpdateTopicConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CMUpdateTopicConfig.html"><span class="name">CMUpdateTopicConfig</span></a><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="config">config: <span class="extype" name="java.util.Properties">Properties</span></span>, <span name="readVersion">readVersion: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CMUpdateTopicConfigextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CMView" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CMViewextendsActorModel.QueryResponsewithProductwithSerializable"></a>
+      <a id="CMView:CMView"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CMView.html"><span class="name">CMView</span></a><span class="params">(<span name="topicsCount">topicsCount: <span class="extype" name="scala.Int">Int</span></span>, <span name="brokersCount">brokersCount: <span class="extype" name="scala.Int">Int</span></span>, <span name="clusterConfig">clusterConfig: <a href="ClusterConfig.html" class="extype" name="kafka.manager.ClusterConfig">ClusterConfig</a></span>)</span><span class="result"> extends <a href="ActorModel$$QueryResponse.html" class="extype" name="kafka.manager.ActorModel.QueryResponse">QueryResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CMViewextendsActorModel.QueryResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CommandRequest" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CommandRequestextendsActorModel.ActorRequest"></a>
+      <a id="CommandRequest:CommandRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CommandRequest.html"><span class="name">CommandRequest</span></a><span class="result"> extends <a href="ActorModel$$ActorRequest.html" class="extype" name="kafka.manager.ActorModel.ActorRequest">ActorRequest</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CommandRequestextendsActorModel.ActorRequest" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CommandResponse" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="CommandResponseextendsActorModel.ActorResponse"></a>
+      <a id="CommandResponse:CommandResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CommandResponse.html"><span class="name">CommandResponse</span></a><span class="result"> extends <a href="ActorModel$$ActorResponse.html" class="extype" name="kafka.manager.ActorModel.ActorResponse">ActorResponse</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CommandResponseextendsActorModel.ActorResponse" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KCAddTopicPartitions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KCAddTopicPartitionsextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KCAddTopicPartitions:KCAddTopicPartitions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KCAddTopicPartitions.html"><span class="name">KCAddTopicPartitions</span></a><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="brokers">brokers: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>]</span>, <span name="partitions">partitions: <span class="extype" name="scala.Int">Int</span></span>, <span name="partitionReplicaList">partitionReplicaList: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>]]</span>, <span name="readVersion">readVersion: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KCAddTopicPartitionsextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KCCommandResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KCCommandResultextendsActorModel.CommandResponsewithProductwithSerializable"></a>
+      <a id="KCCommandResult:KCCommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KCCommandResult.html"><span class="name">KCCommandResult</span></a><span class="params">(<span name="result">result: <span class="extype" name="scala.util.Try">Try</span>[<span class="extype" name="scala.Unit">Unit</span>]</span>)</span><span class="result"> extends <a href="ActorModel$$CommandResponse.html" class="extype" name="kafka.manager.ActorModel.CommandResponse">CommandResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KCCommandResultextendsActorModel.CommandResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KCCreateTopic" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KCCreateTopicextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KCCreateTopic:KCCreateTopic"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KCCreateTopic.html"><span class="name">KCCreateTopic</span></a><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="brokers">brokers: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>]</span>, <span name="partitions">partitions: <span class="extype" name="scala.Int">Int</span></span>, <span name="replicationFactor">replicationFactor: <span class="extype" name="scala.Int">Int</span></span>, <span name="config">config: <span class="extype" name="java.util.Properties">Properties</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KCCreateTopicextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KCDeleteTopic" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KCDeleteTopicextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KCDeleteTopic:KCDeleteTopic"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KCDeleteTopic.html"><span class="name">KCDeleteTopic</span></a><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KCDeleteTopicextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KCPreferredReplicaLeaderElection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KCPreferredReplicaLeaderElectionextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KCPreferredReplicaLeaderElection:KCPreferredReplicaLeaderElection"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KCPreferredReplicaLeaderElection.html"><span class="name">KCPreferredReplicaLeaderElection</span></a><span class="params">(<span name="topicAndPartition">topicAndPartition: <span class="extype" name="scala.Predef.Set">Set</span>[<a href="utils/TopicAndPartition.html" class="extype" name="kafka.manager.utils.TopicAndPartition">TopicAndPartition</a>]</span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KCPreferredReplicaLeaderElectionextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KCReassignPartition" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KCReassignPartitionextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KCReassignPartition:KCReassignPartition"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KCReassignPartition.html"><span class="name">KCReassignPartition</span></a><span class="params">(<span name="currentTopicIdentity">currentTopicIdentity: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="TopicIdentity.html" class="extype" name="kafka.manager.TopicIdentity">TopicIdentity</a>]</span>, <span name="generatedTopicIdentity">generatedTopicIdentity: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <a href="TopicIdentity.html" class="extype" name="kafka.manager.TopicIdentity">TopicIdentity</a>]</span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KCReassignPartitionextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KCUpdateTopicConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KCUpdateTopicConfigextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KCUpdateTopicConfig:KCUpdateTopicConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KCUpdateTopicConfig.html"><span class="name">KCUpdateTopicConfig</span></a><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="config">config: <span class="extype" name="java.util.Properties">Properties</span></span>, <span name="readVersion">readVersion: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KCUpdateTopicConfigextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMAddCluster" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMAddClusterextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KMAddCluster:KMAddCluster"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMAddCluster.html"><span class="name">KMAddCluster</span></a><span class="params">(<span name="config">config: <a href="ClusterConfig.html" class="extype" name="kafka.manager.ClusterConfig">ClusterConfig</a></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMAddClusterextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMClusterCommandRequest" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMClusterCommandRequestextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KMClusterCommandRequest:KMClusterCommandRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMClusterCommandRequest.html"><span class="name">KMClusterCommandRequest</span></a><span class="params">(<span name="clusterName">clusterName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="request">request: <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMClusterCommandRequestextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMClusterConfigResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMClusterConfigResultextendsActorModel.QueryResponsewithProductwithSerializable"></a>
+      <a id="KMClusterConfigResult:KMClusterConfigResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMClusterConfigResult.html"><span class="name">KMClusterConfigResult</span></a><span class="params">(<span name="result">result: <span class="extype" name="scala.util.Try">Try</span>[<a href="ClusterConfig.html" class="extype" name="kafka.manager.ClusterConfig">ClusterConfig</a>]</span>)</span><span class="result"> extends <a href="ActorModel$$QueryResponse.html" class="extype" name="kafka.manager.ActorModel.QueryResponse">QueryResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMClusterConfigResultextendsActorModel.QueryResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMClusterList" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMClusterListextendsActorModel.QueryResponsewithProductwithSerializable"></a>
+      <a id="KMClusterList:KMClusterList"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMClusterList.html"><span class="name">KMClusterList</span></a><span class="params">(<span name="active">active: <span class="extype" name="scala.IndexedSeq">IndexedSeq</span>[<a href="ClusterConfig.html" class="extype" name="kafka.manager.ClusterConfig">ClusterConfig</a>]</span>, <span name="pending">pending: <span class="extype" name="scala.IndexedSeq">IndexedSeq</span>[<a href="ClusterConfig.html" class="extype" name="kafka.manager.ClusterConfig">ClusterConfig</a>]</span>)</span><span class="result"> extends <a href="ActorModel$$QueryResponse.html" class="extype" name="kafka.manager.ActorModel.QueryResponse">QueryResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMClusterListextendsActorModel.QueryResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMClusterQueryRequest" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMClusterQueryRequestextendsActorModel.QueryRequestwithProductwithSerializable"></a>
+      <a id="KMClusterQueryRequest:KMClusterQueryRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMClusterQueryRequest.html"><span class="name">KMClusterQueryRequest</span></a><span class="params">(<span name="clusterName">clusterName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="request">request: <a href="ActorModel$$QueryRequest.html" class="extype" name="kafka.manager.ActorModel.QueryRequest">QueryRequest</a></span>)</span><span class="result"> extends <a href="ActorModel$$QueryRequest.html" class="extype" name="kafka.manager.ActorModel.QueryRequest">QueryRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMClusterQueryRequestextendsActorModel.QueryRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMCommandResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMCommandResultextendsActorModel.CommandResponsewithProductwithSerializable"></a>
+      <a id="KMCommandResult:KMCommandResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMCommandResult.html"><span class="name">KMCommandResult</span></a><span class="params">(<span name="result">result: <span class="extype" name="scala.util.Try">Try</span>[<span class="extype" name="scala.Unit">Unit</span>]</span>)</span><span class="result"> extends <a href="ActorModel$$CommandResponse.html" class="extype" name="kafka.manager.ActorModel.CommandResponse">CommandResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMCommandResultextendsActorModel.CommandResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMDeleteCluster" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMDeleteClusterextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KMDeleteCluster:KMDeleteCluster"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMDeleteCluster.html"><span class="name">KMDeleteCluster</span></a><span class="params">(<span name="clusterName">clusterName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMDeleteClusterextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMDisableCluster" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMDisableClusterextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KMDisableCluster:KMDisableCluster"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMDisableCluster.html"><span class="name">KMDisableCluster</span></a><span class="params">(<span name="clusterName">clusterName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMDisableClusterextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMEnableCluster" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMEnableClusterextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KMEnableCluster:KMEnableCluster"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMEnableCluster.html"><span class="name">KMEnableCluster</span></a><span class="params">(<span name="clusterName">clusterName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMEnableClusterextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMGetClusterConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMGetClusterConfigextendsActorModel.QueryRequestwithProductwithSerializable"></a>
+      <a id="KMGetClusterConfig:KMGetClusterConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMGetClusterConfig.html"><span class="name">KMGetClusterConfig</span></a><span class="params">(<span name="clusterName">clusterName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="ActorModel$$QueryRequest.html" class="extype" name="kafka.manager.ActorModel.QueryRequest">QueryRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMGetClusterConfigextendsActorModel.QueryRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMQueryResult" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMQueryResultextendsActorModel.QueryResponsewithProductwithSerializable"></a>
+      <a id="KMQueryResult:KMQueryResult"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMQueryResult.html"><span class="name">KMQueryResult</span></a><span class="params">(<span name="result">result: <span class="extype" name="scala.IndexedSeq">IndexedSeq</span>[<a href="ClusterConfig.html" class="extype" name="kafka.manager.ClusterConfig">ClusterConfig</a>]</span>)</span><span class="result"> extends <a href="ActorModel$$QueryResponse.html" class="extype" name="kafka.manager.ActorModel.QueryResponse">QueryResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMQueryResultextendsActorModel.QueryResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMUpdateCluster" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMUpdateClusterextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KMUpdateCluster:KMUpdateCluster"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMUpdateCluster.html"><span class="name">KMUpdateCluster</span></a><span class="params">(<span name="config">config: <a href="ClusterConfig.html" class="extype" name="kafka.manager.ClusterConfig">ClusterConfig</a></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMUpdateClusterextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSEndPreferredLeaderElection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSEndPreferredLeaderElectionextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KSEndPreferredLeaderElection:KSEndPreferredLeaderElection"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSEndPreferredLeaderElection.html"><span class="name">KSEndPreferredLeaderElection</span></a><span class="params">(<span name="millis">millis: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSEndPreferredLeaderElectionextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSEndReassignPartition" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSEndReassignPartitionextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KSEndReassignPartition:KSEndReassignPartition"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSEndReassignPartition.html"><span class="name">KSEndReassignPartition</span></a><span class="params">(<span name="millis">millis: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSEndReassignPartitionextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSGetAllTopicDescriptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSGetAllTopicDescriptionsextendsActorModel.KSRequestwithProductwithSerializable"></a>
+      <a id="KSGetAllTopicDescriptions:KSGetAllTopicDescriptions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSGetAllTopicDescriptions.html"><span class="name">KSGetAllTopicDescriptions</span></a><span class="params">(<span name="lastUpdateMillis">lastUpdateMillis: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="ActorModel$$KSRequest.html" class="extype" name="kafka.manager.ActorModel.KSRequest">KSRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSGetAllTopicDescriptionsextendsActorModel.KSRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSGetBrokerState" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSGetBrokerStateextendsActorModel.KSRequestwithProductwithSerializable"></a>
+      <a id="KSGetBrokerState:KSGetBrokerState"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSGetBrokerState.html"><span class="name">KSGetBrokerState</span></a><span class="params">(<span name="id">id: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="ActorModel$$KSRequest.html" class="extype" name="kafka.manager.ActorModel.KSRequest">KSRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSGetBrokerStateextendsActorModel.KSRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSGetTopicConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSGetTopicConfigextendsActorModel.KSRequestwithProductwithSerializable"></a>
+      <a id="KSGetTopicConfig:KSGetTopicConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSGetTopicConfig.html"><span class="name">KSGetTopicConfig</span></a><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="ActorModel$$KSRequest.html" class="extype" name="kafka.manager.ActorModel.KSRequest">KSRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSGetTopicConfigextendsActorModel.KSRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSGetTopicDescription" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSGetTopicDescriptionextendsActorModel.KSRequestwithProductwithSerializable"></a>
+      <a id="KSGetTopicDescription:KSGetTopicDescription"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSGetTopicDescription.html"><span class="name">KSGetTopicDescription</span></a><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="ActorModel$$KSRequest.html" class="extype" name="kafka.manager.ActorModel.KSRequest">KSRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSGetTopicDescriptionextendsActorModel.KSRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSGetTopicDescriptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSGetTopicDescriptionsextendsActorModel.KSRequestwithProductwithSerializable"></a>
+      <a id="KSGetTopicDescriptions:KSGetTopicDescriptions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSGetTopicDescriptions.html"><span class="name">KSGetTopicDescriptions</span></a><span class="params">(<span name="topics">topics: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="ActorModel$$KSRequest.html" class="extype" name="kafka.manager.ActorModel.KSRequest">KSRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSGetTopicDescriptionsextendsActorModel.KSRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSRequest" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="KSRequestextendsActorModel.QueryRequest"></a>
+      <a id="KSRequest:KSRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSRequest.html"><span class="name">KSRequest</span></a><span class="result"> extends <a href="ActorModel$$QueryRequest.html" class="extype" name="kafka.manager.ActorModel.QueryRequest">QueryRequest</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSRequestextendsActorModel.QueryRequest" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSUpdatePreferredLeaderElection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSUpdatePreferredLeaderElectionextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KSUpdatePreferredLeaderElection:KSUpdatePreferredLeaderElection"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSUpdatePreferredLeaderElection.html"><span class="name">KSUpdatePreferredLeaderElection</span></a><span class="params">(<span name="millis">millis: <span class="extype" name="scala.Long">Long</span></span>, <span name="json">json: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSUpdatePreferredLeaderElectionextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSUpdateReassignPartition" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSUpdateReassignPartitionextendsActorModel.CommandRequestwithProductwithSerializable"></a>
+      <a id="KSUpdateReassignPartition:KSUpdateReassignPartition"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSUpdateReassignPartition.html"><span class="name">KSUpdateReassignPartition</span></a><span class="params">(<span name="millis">millis: <span class="extype" name="scala.Long">Long</span></span>, <span name="json">json: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSUpdateReassignPartitionextendsActorModel.CommandRequestwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.PreferredReplicaElection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PreferredReplicaElectionextendsActorModel.QueryResponsewithProductwithSerializable"></a>
+      <a id="PreferredReplicaElection:PreferredReplicaElection"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$PreferredReplicaElection.html"><span class="name">PreferredReplicaElection</span></a><span class="params">(<span name="startTime">startTime: <span class="extype" name="org.joda.time.DateTime">DateTime</span></span>, <span name="topicAndPartition">topicAndPartition: <span class="extype" name="scala.Predef.Set">Set</span>[<a href="utils/TopicAndPartition.html" class="extype" name="kafka.manager.utils.TopicAndPartition">TopicAndPartition</a>]</span>, <span name="endTime">endTime: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>)</span><span class="result"> extends <a href="ActorModel$$QueryResponse.html" class="extype" name="kafka.manager.ActorModel.QueryResponse">QueryResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@PreferredReplicaElectionextendsActorModel.QueryResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.QueryRequest" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryRequestextendsActorModel.ActorRequest"></a>
+      <a id="QueryRequest:QueryRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$QueryRequest.html"><span class="name">QueryRequest</span></a><span class="result"> extends <a href="ActorModel$$ActorRequest.html" class="extype" name="kafka.manager.ActorModel.ActorRequest">ActorRequest</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@QueryRequestextendsActorModel.ActorRequest" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.QueryResponse" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="QueryResponseextendsActorModel.ActorResponse"></a>
+      <a id="QueryResponse:QueryResponse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$QueryResponse.html"><span class="name">QueryResponse</span></a><span class="result"> extends <a href="ActorModel$$ActorResponse.html" class="extype" name="kafka.manager.ActorModel.ActorResponse">ActorResponse</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@QueryResponseextendsActorModel.ActorResponse" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.ReassignPartitions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReassignPartitionsextendsActorModel.QueryResponsewithProductwithSerializable"></a>
+      <a id="ReassignPartitions:ReassignPartitions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$ReassignPartitions.html"><span class="name">ReassignPartitions</span></a><span class="params">(<span name="startTime">startTime: <span class="extype" name="org.joda.time.DateTime">DateTime</span></span>, <span name="partitionsToBeReassigned">partitionsToBeReassigned: <span class="extype" name="scala.Predef.Map">Map</span>[<a href="utils/TopicAndPartition.html" class="extype" name="kafka.manager.utils.TopicAndPartition">TopicAndPartition</a>, <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="scala.Int">Int</span>]]</span>, <span name="endTime">endTime: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="org.joda.time.DateTime">DateTime</span>]</span>)</span><span class="result"> extends <a href="ActorModel$$QueryResponse.html" class="extype" name="kafka.manager.ActorModel.QueryResponse">QueryResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@ReassignPartitionsextendsActorModel.QueryResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.TopicConfig" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TopicConfigextendsActorModel.QueryResponsewithProductwithSerializable"></a>
+      <a id="TopicConfig:TopicConfig"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$TopicConfig.html"><span class="name">TopicConfig</span></a><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="config">config: <span class="extype" name="scala.Option">Option</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Predef.String">String</span>)]</span>)</span><span class="result"> extends <a href="ActorModel$$QueryResponse.html" class="extype" name="kafka.manager.ActorModel.QueryResponse">QueryResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@TopicConfigextendsActorModel.QueryResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.TopicDescription" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TopicDescriptionextendsActorModel.QueryResponsewithProductwithSerializable"></a>
+      <a id="TopicDescription:TopicDescription"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$TopicDescription.html"><span class="name">TopicDescription</span></a><span class="params">(<span name="topic">topic: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="description">description: (<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Predef.String">String</span>)</span>, <span name="partitionState">partitionState: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="scala.Predef.String">String</span>, <span class="extype" name="scala.Predef.String">String</span>]]</span>, <span name="config">config: <span class="extype" name="scala.Option">Option</span>[(<span class="extype" name="scala.Int">Int</span>, <span class="extype" name="scala.Predef.String">String</span>)]</span>, <span name="deleteSupported">deleteSupported: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result"> extends <a href="ActorModel$$QueryResponse.html" class="extype" name="kafka.manager.ActorModel.QueryResponse">QueryResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@TopicDescriptionextendsActorModel.QueryResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.TopicDescriptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TopicDescriptionsextendsActorModel.QueryResponsewithProductwithSerializable"></a>
+      <a id="TopicDescriptions:TopicDescriptions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$TopicDescriptions.html"><span class="name">TopicDescriptions</span></a><span class="params">(<span name="descriptions">descriptions: <span class="extype" name="scala.IndexedSeq">IndexedSeq</span>[<a href="ActorModel$$TopicDescription.html" class="extype" name="kafka.manager.ActorModel.TopicDescription">TopicDescription</a>]</span>, <span name="lastUpdateMillis">lastUpdateMillis: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result"> extends <a href="ActorModel$$QueryResponse.html" class="extype" name="kafka.manager.ActorModel.QueryResponse">QueryResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@TopicDescriptionsextendsActorModel.QueryResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.TopicList" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="TopicListextendsActorModel.QueryResponsewithProductwithSerializable"></a>
+      <a id="TopicList:TopicList"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$TopicList.html"><span class="name">TopicList</span></a><span class="params">(<span name="list">list: <span class="extype" name="scala.IndexedSeq">IndexedSeq</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="deleteSet">deleteSet: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result"> extends <a href="ActorModel$$QueryResponse.html" class="extype" name="kafka.manager.ActorModel.QueryResponse">QueryResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@TopicListextendsActorModel.QueryResponsewithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@##():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="kafka.manager.ActorModel.BVForceUpdate" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="BVForceUpdate"></a>
+      <a id="BVForceUpdate:BVForceUpdate"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$BVForceUpdate$.html"><span class="name">BVForceUpdate</span></a><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@BVForceUpdate" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CMGetView" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CMGetView"></a>
+      <a id="CMGetView:CMGetView"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CMGetView$.html"><span class="name">CMGetView</span></a><span class="result"> extends <a href="ActorModel$$QueryRequest.html" class="extype" name="kafka.manager.ActorModel.QueryRequest">QueryRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CMGetView" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.CMShutdown" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CMShutdown"></a>
+      <a id="CMShutdown:CMShutdown"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$CMShutdown$.html"><span class="name">CMShutdown</span></a><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@CMShutdown" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.DCUpdateState" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DCUpdateState"></a>
+      <a id="DCUpdateState:DCUpdateState"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$DCUpdateState$.html"><span class="name">DCUpdateState</span></a><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@DCUpdateState" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMGetActiveClusters" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMGetActiveClusters"></a>
+      <a id="KMGetActiveClusters:KMGetActiveClusters"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMGetActiveClusters$.html"><span class="name">KMGetActiveClusters</span></a><span class="result"> extends <a href="ActorModel$$QueryRequest.html" class="extype" name="kafka.manager.ActorModel.QueryRequest">QueryRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMGetActiveClusters" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMGetAllClusters" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMGetAllClusters"></a>
+      <a id="KMGetAllClusters:KMGetAllClusters"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMGetAllClusters$.html"><span class="name">KMGetAllClusters</span></a><span class="result"> extends <a href="ActorModel$$QueryRequest.html" class="extype" name="kafka.manager.ActorModel.QueryRequest">QueryRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMGetAllClusters" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMPruneClusters" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMPruneClusters"></a>
+      <a id="KMPruneClusters:KMPruneClusters"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMPruneClusters$.html"><span class="name">KMPruneClusters</span></a><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMPruneClusters" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMShutdown" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMShutdown"></a>
+      <a id="KMShutdown:KMShutdown"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMShutdown$.html"><span class="name">KMShutdown</span></a><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMShutdown" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMShutdownComplete" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMShutdownComplete"></a>
+      <a id="KMShutdownComplete:KMShutdownComplete"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMShutdownComplete$.html"><span class="name">KMShutdownComplete</span></a><span class="result"> extends <a href="ActorModel$$CommandResponse.html" class="extype" name="kafka.manager.ActorModel.CommandResponse">CommandResponse</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMShutdownComplete" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KMUpdateState" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KMUpdateState"></a>
+      <a id="KMUpdateState:KMUpdateState"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KMUpdateState$.html"><span class="name">KMUpdateState</span></a><span class="result"> extends <a href="ActorModel$$CommandRequest.html" class="extype" name="kafka.manager.ActorModel.CommandRequest">CommandRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KMUpdateState" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSGetBrokers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSGetBrokers"></a>
+      <a id="KSGetBrokers:KSGetBrokers"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSGetBrokers$.html"><span class="name">KSGetBrokers</span></a><span class="result"> extends <a href="ActorModel$$KSRequest.html" class="extype" name="kafka.manager.ActorModel.KSRequest">KSRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSGetBrokers" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSGetPreferredLeaderElection" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSGetPreferredLeaderElection"></a>
+      <a id="KSGetPreferredLeaderElection:KSGetPreferredLeaderElection"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSGetPreferredLeaderElection$.html"><span class="name">KSGetPreferredLeaderElection</span></a><span class="result"> extends <a href="ActorModel$$KSRequest.html" class="extype" name="kafka.manager.ActorModel.KSRequest">KSRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSGetPreferredLeaderElection" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSGetReassignPartition" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSGetReassignPartition"></a>
+      <a id="KSGetReassignPartition:KSGetReassignPartition"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSGetReassignPartition$.html"><span class="name">KSGetReassignPartition</span></a><span class="result"> extends <a href="ActorModel$$KSRequest.html" class="extype" name="kafka.manager.ActorModel.KSRequest">KSRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSGetReassignPartition" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSGetTopics" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSGetTopics"></a>
+      <a id="KSGetTopics:KSGetTopics"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSGetTopics$.html"><span class="name">KSGetTopics</span></a><span class="result"> extends <a href="ActorModel$$KSRequest.html" class="extype" name="kafka.manager.ActorModel.KSRequest">KSRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSGetTopics" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="kafka.manager.ActorModel.KSGetTopicsLastUpdateMillis" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="KSGetTopicsLastUpdateMillis"></a>
+      <a id="KSGetTopicsLastUpdateMillis:KSGetTopicsLastUpdateMillis"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ActorModel$$KSGetTopicsLastUpdateMillis$.html"><span class="name">KSGetTopicsLastUpdateMillis</span></a><span class="result"> extends <a href="ActorModel$$KSRequest.html" class="extype" name="kafka.manager.ActorModel.KSRequest">KSRequest</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@KSGetTopicsLastUpdateMillis" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@clone():Object" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@notify():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@toString():String" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@wait():Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../index.html#kafka.manager.ActorModel$@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../lib/permalink.png" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
